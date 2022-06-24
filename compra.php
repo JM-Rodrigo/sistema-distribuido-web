@@ -28,128 +28,189 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Galeria</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Sobre Nosotros</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.php">Inicio</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="producto.php">Registro</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="compra.php">Compra</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="venta.php">Venta</a></li>
-
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
-            </div>
-        </header>
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
+        <!-- About Section-->
+        <section class="page-section bg-primary text-white mb-0" id="about">
+        </section>
+        <!-- Contact Section-->
+        <section class="page-section" id="registro">
             <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Registro</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <!-- Portfolio Grid Items-->
+                <!-- Contact Section Form-->
                 <div class="row justify-content-center">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                    <div class="col-lg-8 col-xl-7">
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN" >
+                            <!-- Name input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" name="codigo" id="name" type="text" placeholder="Ingresa el código" data-sb-validations="required" style="color: rgb(0, 0, 0);"/>
+                                <label for="name" style="color: rgb(0, 0, 0);">Código</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                              <!-- Message input-->
+                              <div class="form-floating mb-3">
+                                <textarea class="form-control" name="descripcion" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <label for="message">Descripción</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cake.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" name="color" id="name" type="text" placeholder="Ingresa el código" data-sb-validations="required" style="color: rgb(0, 0, 0);"/>
+                                <label for="name" style="color: rgb(0, 0, 0);">Color</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/circus.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 4-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+
+                            <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Material</label>
+                                  <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbInscritoAlum">
+                                    <option>--Seleccione--</option>
+                                    <?php
+                                        include("funciones/conexion.php");
+                                        $sentencia="SELECT IdMaterial, NombreMaterial FROM material";
+                                        $resultado=mysqli_query($conexion,$sentencia);
+                                        while($material=mysqli_fetch_assoc($resultado)){
+                                        echo "
+                                        <option value='".$material['IdMaterial']."'>".$material["NombreMaterial"]."</option>
+                                        ";
+                                        }
+                                    ?>
+                                  </select>
+                            <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Marca</label>
+                                  <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbInscritoAlum">
+                                    <option>--Seleccione--</option>
+                                    <?php
+                                        include("funciones/conexion.php");
+                                        $sentencia="SELECT IdMarca, NombreMarca FROM marca";
+                                        $resultado=mysqli_query($conexion,$sentencia);
+                                        while($marca=mysqli_fetch_assoc($resultado)){
+                                        echo "
+                                        <option value='".$marca['IdMarca']."'>".$marca["NombreMarca"]."</option>
+                                        ";
+                                        }
+                                    ?>
+                                  </select>
+                            <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Categoria</label>
+                                  <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbInscritoAlum">
+                                    <option>--Seleccione--</option>
+                                    <?php
+                                        include("funciones/conexion.php");
+                                        $sentencia="SELECT IdCategoria, NombreCategoria FROM categoria";
+                                        $resultado=mysqli_query($conexion,$sentencia);
+                                        while($categoria=mysqli_fetch_assoc($resultado)){
+                                        echo "
+                                        <option value='".$categoria['IdCategoria']."'>".$categoria["NombreCategoria"]."</option>
+                                        ";
+                                        }
+                                    ?>
+                                  </select>
+                            <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Sección</label>
+                                  <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbInscritoAlum">
+                                    <option>--Seleccione--</option>
+                                    <?php
+                                        include("funciones/conexion.php");
+                                        $sentencia="SELECT IdSeccion, NombreSeccion FROM seccion";
+                                        $resultado=mysqli_query($conexion,$sentencia);
+                                        while($seccion=mysqli_fetch_assoc($resultado)){
+                                        echo "
+                                        <option value='".$seccion['IdSeccion']."'>".$seccion["NombreSeccion"]."</option>
+                                        ";
+                                        }
+                                    ?>
+                                  </select>
+                          
+                                
+                                    
+                                    <!-- Submit success message-->
+                                    <!---->
+                                    <!-- This is what your users will see when the form-->
+                                    <!-- has successfully submitted-->
+                                    <div class="d-none" id="submitSuccessMessage">
+                                        <div class="text-center mb-3">
+                                            <div class="fw-bolder">Form submission successful!</div>
+                                            To activate this form, sign up at
+                                            <br />
+                                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                        </div>
+                                    </div>
+                                    <!-- Submit error message-->
+                                    <!---->
+                                    <!-- This is what your users will see when there is-->
+                                    <!-- an error submitting the form-->
+                                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                    <!-- Submit Button-->
+                                    <button class="btn btn-primary btn-xl disabled mt-3" id="submitButton" type="submit">Send</button>
+                                </form>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/game.png" alt="..." />
                         </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        <div class="container mt-5">
+                            <!-- Contact Section Heading-->
+                            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/safe.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 6-->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            <!-- Contact Section Form-->
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 col-xl-7">
+                                    <div class="form-floating mb-3">
+                                    <font SIZE=5>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">First</th>
+                                                <th scope="col">Last</th>
+                                                <th scope="col">Handle</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                <th scope="row">1</th>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                <th scope="row">2</th>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                <th scope="row">3</th>
+                                                <td colspan="2">Larry the Bird</td>
+                                                <td>@twitter</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </font>
+                                    </div> 
+                                
+                                </div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="..." />
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
-                </div>
-                <!-- About Section Button-->
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
-                        <i class="fas fa-download me-2"></i>
-                        Free Download!
-                    </a>
-                </div>
-            </div>
-        </section>  
+                    </div>        
+        </section>           
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
