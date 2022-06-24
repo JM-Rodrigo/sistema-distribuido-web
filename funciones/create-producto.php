@@ -10,6 +10,7 @@
     $IdMarca= $_POST['cmbMarca'];
     $IdCategoria= $_POST['cmbCategoria'];
     $IdSeccion= $_POST['cmbSeccion'];
+    
 
 
     $sentencia = "INSERT INTO calzado VALUES(
@@ -18,9 +19,9 @@
         '$ColorCalzado',
         $PrecioSalidaCalzado,
         $IdMaterial,
-        $IdMarca,
+        $IdSeccion,
         $IdCategoria,
-        $IdSeccion
+        $IdMarca
         )";
 
     if(mysqli_query($conexion,$sentencia)){
