@@ -38,6 +38,7 @@
         </nav>
         <!-- About Section-->
         <section class="page-section bg-primary text-white mb-0" id="about">
+            
         </section>
         <!-- Contact Section-->
         <section class="page-section" id="registro">
@@ -60,107 +61,112 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN" >
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" name="codigo" id="name" type="text" placeholder="Ingresa el código" data-sb-validations="required" style="color: rgb(0, 0, 0);"/>
-                                <label for="name" style="color: rgb(0, 0, 0);">Código</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
-                            </div>
-                              <!-- Message input-->
-                              <div class="form-floating mb-3">
-                                <textarea class="form-control" name="descripcion" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Descripción</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input class="form-control" name="color" id="name" type="text" placeholder="Ingresa el código" data-sb-validations="required" style="color: rgb(0, 0, 0);"/>
-                                <label for="name" style="color: rgb(0, 0, 0);">Color</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
-                            </div>
-
-                            <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Material</label>
-                                  <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbInscritoAlum">
-                                    <option>--Seleccione--</option>
-                                    <?php
-                                        include("funciones/conexion.php");
-                                        $sentencia="SELECT IdMaterial, NombreMaterial FROM material";
-                                        $resultado=mysqli_query($conexion,$sentencia);
-                                        while($material=mysqli_fetch_assoc($resultado)){
-                                        echo "
-                                        <option value='".$material['IdMaterial']."'>".$material["NombreMaterial"]."</option>
-                                        ";
-                                        }
-                                    ?>
-                                  </select>
-                            <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Marca</label>
-                                  <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbInscritoAlum">
-                                    <option>--Seleccione--</option>
-                                    <?php
-                                        include("funciones/conexion.php");
-                                        $sentencia="SELECT IdMarca, NombreMarca FROM marca";
-                                        $resultado=mysqli_query($conexion,$sentencia);
-                                        while($marca=mysqli_fetch_assoc($resultado)){
-                                        echo "
-                                        <option value='".$marca['IdMarca']."'>".$marca["NombreMarca"]."</option>
-                                        ";
-                                        }
-                                    ?>
-                                  </select>
-                            <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Categoria</label>
-                                  <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbInscritoAlum">
-                                    <option>--Seleccione--</option>
-                                    <?php
-                                        include("funciones/conexion.php");
-                                        $sentencia="SELECT IdCategoria, NombreCategoria FROM categoria";
-                                        $resultado=mysqli_query($conexion,$sentencia);
-                                        while($categoria=mysqli_fetch_assoc($resultado)){
-                                        echo "
-                                        <option value='".$categoria['IdCategoria']."'>".$categoria["NombreCategoria"]."</option>
-                                        ";
-                                        }
-                                    ?>
-                                  </select>
-                            <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Sección</label>
-                                  <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbInscritoAlum">
-                                    <option>--Seleccione--</option>
-                                    <?php
-                                        include("funciones/conexion.php");
-                                        $sentencia="SELECT IdSeccion, NombreSeccion FROM seccion";
-                                        $resultado=mysqli_query($conexion,$sentencia);
-                                        while($seccion=mysqli_fetch_assoc($resultado)){
-                                        echo "
-                                        <option value='".$seccion['IdSeccion']."'>".$seccion["NombreSeccion"]."</option>
-                                        ";
-                                        }
-                                    ?>
-                                  </select>
-                          
-                                
-                                    
-                                    <!-- Submit success message-->
-                                    <!---->
-                                    <!-- This is what your users will see when the form-->
-                                    <!-- has successfully submitted-->
-                                    <div class="d-none" id="submitSuccessMessage">
-                                        <div class="text-center mb-3">
-                                            <div class="fw-bolder">Form submission successful!</div>
-                                            To activate this form, sign up at
-                                            <br />
-                                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                        </div>
+                                <form action="funciones/Rodrigo/create-producto.php" method="POST">
+                                    <!-- Name input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="txtCodigo" id="name" type="text" placeholder="Ingresa el código" data-sb-validations="required" style="color: rgb(0, 0, 0);"/>
+                                        <label for="name" style="color: rgb(0, 0, 0);">Código</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
-                                    <!-- Submit error message-->
-                                    <!---->
-                                    <!-- This is what your users will see when there is-->
-                                    <!-- an error submitting the form-->
-                                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                                    <!-- Submit Button-->
-                                    <button class="btn btn-primary btn-xl disabled mt-3" id="submitButton" type="submit">Send</button>
+                                    <!-- Message input-->
+                                    <div class="form-floating mb-3">
+                                        <textarea class="form-control" name="txtDescripcion" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                        <label for="message">Descripción</label>
+                                        <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="txtColor" id="name" type="text" placeholder="Ingresa el código" data-sb-validations="required" style="color: rgb(0, 0, 0);"/>
+                                        <label for="name" style="color: rgb(0, 0, 0);">Color</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="txtPrecio"  id="name" type="number" step="any" placeholder="Ingresa el precio" data-sb-validations="required" style="color: rgb(0, 0, 0);"/>
+                                        <label for="name" style="color: rgb(0, 0, 0);">Precio</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
+                                    </div>
+
+                                    <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Material</label>
+                                        <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbMaterial">
+                                            <option>--Seleccione--</option>
+                                            <?php
+                                                include("funciones/Rodrigo/conexion.php");
+                                                $sentencia="SELECT IdMaterial, NombreMaterial FROM material";
+                                                $resultado=mysqli_query($conexion,$sentencia);
+                                                while($material=mysqli_fetch_assoc($resultado)){
+                                                echo "
+                                                <option value='".$material['IdMaterial']."'>".$material["NombreMaterial"]."</option>
+                                                ";
+                                                }
+                                            ?>
+                                        </select>
+                                    <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Marca</label>
+                                        <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbMarca">
+                                            <option>--Seleccione--</option>
+                                            <?php
+                                                include("funciones/Rodrigo/conexion.php");
+                                                $sentencia="SELECT IdMarca, NombreMarca FROM marca";
+                                                $resultado=mysqli_query($conexion,$sentencia);
+                                                while($marca=mysqli_fetch_assoc($resultado)){
+                                                echo "
+                                                <option value='".$marca['IdMarca']."'>".$marca["NombreMarca"]."</option>
+                                                ";
+                                                }
+                                            ?>
+                                        </select>
+                                    <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Categoria</label>
+                                        <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbCategoria">
+                                            <option>--Seleccione--</option>
+                                            <?php
+                                                include("funciones/Rodrigo/conexion.php");
+                                                $sentencia="SELECT IdCategoria, NombreCategoria FROM categoria";
+                                                $resultado=mysqli_query($conexion,$sentencia);
+                                                while($categoria=mysqli_fetch_assoc($resultado)){
+                                                echo "
+                                                <option value='".$categoria['IdCategoria']."'>".$categoria["NombreCategoria"]."</option>
+                                                ";
+                                                }
+                                            ?>
+                                        </select>
+                                    <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Sección</label>
+                                        <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbSeccion">
+                                            <option>--Seleccione--</option>
+                                            <?php
+                                                include("funciones/Rodrigo/conexion.php");
+                                                $sentencia="SELECT IdSeccion, NombreSeccion FROM seccion";
+                                                $resultado=mysqli_query($conexion,$sentencia);
+                                                while($seccion=mysqli_fetch_assoc($resultado)){
+                                                echo "
+                                                <option value='".$seccion['IdSeccion']."'>".$seccion["NombreSeccion"]."</option>
+                                                ";
+                                                }
+                                            ?>
+                                        </select>
+                                
+                                        
+                                            
+                                            <!-- Submit success message-->
+                                            <!---->
+                                            <!-- This is what your users will see when the form-->
+                                            <!-- has successfully submitted-->
+                                            <div class="d-none" id="submitSuccessMessage">
+                                                <div class="text-center mb-3">
+                                                    <div class="fw-bolder">Form submission successful!</div>
+                                                    To activate this form, sign up at
+                                                    <br />
+                                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                                </div>
+                                            </div>
+                                            <!-- Submit error message-->
+                                            <!---->
+                                            <!-- This is what your users will see when there is-->
+                                            <!-- an error submitting the form-->
+                                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                            <!-- Submit Button-->
+                                            <button href="#!" class="btn btn-info btn-raised btn-sm" style="color: rgb(0, 0, 0); font-size: 100%;"><i class="zmdi zmdi-floppy zmdi-hc-fw"></i>GUARDAR CAMBIOS</button>
                                 </form>
                             </div>
                         </div>
-                        <div class="container mt-5">
+                        <div class="container mt-5 ">
                             <!-- Contact Section Heading-->
                             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
                             <!-- Icon Divider-->
@@ -173,34 +179,72 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8 col-xl-7">
                                     <div class="form-floating mb-3">
-                                    <font SIZE=5>
+                                    <font SIZE=4>
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">First</th>
-                                                <th scope="col">Last</th>
-                                                <th scope="col">Handle</th>
+                                                    <th scope="col">Código</th>
+                                                    <th scope="col">Descripción</th>
+                                                    <th scope="col">Color</th>
+                                                    <th scope="col">Material</th>
+                                                    <th scope="col">Marca</th>
+                                                    <th scope="col">Categoria</th>
+                                                    <th scope="col">Sección</th>
+                                                    <th scope="col">Precio</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                </tr>
-                                                <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                                </tr>
-                                                <tr>
-                                                <th scope="row">3</th>
-                                                <td colspan="2">Larry the Bird</td>
-                                                <td>@twitter</td>
-                                                </tr>
+
+                                            <?php
+                                                    include("funciones/Rodrigo/conexion.php");
+
+                                                    $sentencia = "SELECT
+                                                    calzado.Codigo, 
+                                                    calzado.DescripcionCalzado, 
+                                                    calzado.ColorCalzado, 
+                                                    material.NombreMaterial, 
+                                                    marca.NombreMarca, 
+                                                    categoria.NombreCategoria, 
+                                                    seccion.NombreSeccion, 
+                                                    calzado.PrecioSalidaCalzado
+                                                FROM
+                                                    calzado
+                                                    INNER JOIN
+                                                    material
+                                                    ON 
+                                                        calzado.IdMaterial = material.IdMaterial
+                                                    INNER JOIN
+                                                    seccion
+                                                    ON 
+                                                        calzado.IdSeccion = seccion.IdSeccion
+                                                    INNER JOIN
+                                                    categoria
+                                                    ON 
+                                                        calzado.IdCategoria = categoria.IdCategoria
+                                                    INNER JOIN
+                                                    marca
+                                                    ON 
+                                                        calzado.IdMarca = marca.IdMarca";
+
+                                                    $resultado = mysqli_query($conexion, $sentencia);
+
+                                                    while($registro = mysqli_fetch_assoc($resultado)){
+                                                        echo "
+                                                        <tr>
+                                                            <td>".$registro["Codigo"]."</td>
+                                                            <td>".$registro["DescripcionCalzado"]."</td>
+                                                            <td>".$registro["ColorCalzado"]."</td>
+                                                            <td>".$registro["NombreMaterial"]."</td>
+                                                            <td>".$registro["NombreMarca"]."</td>
+                                                            <td>".$registro["NombreCategoria"]."</td>
+                                                            <td>".$registro["NombreSeccion"]."</td>
+                                                            <td>".$registro["PrecioSalidaCalzado"]."</td>
+                                                            <td><a href='#!' class='btn btn-success btn-raised btn-xs'><i class='zmdi zmdi-refresh'></i></a></td>
+                                                            <td><a href='#!' class='btn btn-danger btn-raised btn-xs'><i class='zmdi zmdi-delete'></i></a></td>
+                                                        </tr>";
+                                                    }
+                                                        mysqli_close($conexion);
+                                            ?>
                                             </tbody>
                                         </table>
                                     </font>
@@ -209,7 +253,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>        
+                    </div>
+                </div>
+            </div>
         </section>           
         <!-- Footer-->
         <footer class="footer text-center">
