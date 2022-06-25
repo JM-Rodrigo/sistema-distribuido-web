@@ -71,22 +71,22 @@
                                     <!-- Message input-->
                                     <div class="form-floating mb-3">
                                         <textarea class="form-control" name="txtDescripcion" type="text"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required"></textarea>
-                                        <label for="message" style="color: rgb(0, 0, 0);">$idVenta</label>
+                                        <label for="message" style="color: rgb(0, 0, 0);">idVenta</label>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" name="txtColor"  type="text"  minlength="1"  maxlength="30" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">$idCliente</label>
+                                        <label for="name" style="color: rgb(0, 0, 0);">idCliente</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" name="txtPrecio" type="number" step="0.01" minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">$fechaHoraVenta</label>
+                                        <label for="name" style="color: rgb(0, 0, 0);">FechaHoraVenta</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" name="txtNumero" type="text"  minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">$totalVenta</label>
+                                        <label for="name" style="color: rgb(0, 0, 0);">TotalVenta</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
