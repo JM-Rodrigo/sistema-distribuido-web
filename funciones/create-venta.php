@@ -1,7 +1,6 @@
 <?php
     include("conexionPablo.php");
 
-    $codigo= $_POST['txtCodigo'];
     $idVenta= $_POST['cmbVenta'];
     $idCliente= $_POST['cmbCliente'];
     $fechaHoraVenta= $_POST['txtFechaVenta'];

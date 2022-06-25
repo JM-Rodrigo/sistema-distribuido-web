@@ -65,38 +65,23 @@
                                     <!-- Name input-->
                                     <div class="form-floating mb-3">
                                         <input class="form-control" name="txtCodigo"  type="text" minlength="1"  maxlength="6" placeholder="Rellena el campo" data-sb-validations="required"/>
-                                        <label for="name" style="color: rgb(0, 0, 0);">Código</label>
+                                        <label for="name" style="color: rgb(0, 0, 0);">IdVenta</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <!-- Message input-->
                                     <div class="form-floating mb-3">
                                         <textarea class="form-control" name="txtDescripcion" type="text"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required"></textarea>
-                                        <label for="message" style="color: rgb(0, 0, 0);">idVenta</label>
+                                        <label for="message" style="color: rgb(0, 0, 0);">IdCliente</label>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" name="txtColor"  type="text"  minlength="1"  maxlength="30" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">idCliente</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtPrecio" type="number" step="0.01" minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
                                         <label for="name" style="color: rgb(0, 0, 0);">FechaHoraVenta</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtNumero" type="text"  minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
+                                        <input class="form-control" name="txtPrecio" type="number" step="0.01" minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
                                         <label for="name" style="color: rgb(0, 0, 0);">TotalVenta</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtCantidad" type="number"  minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">Cantidad</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtCantidad" type="number"  minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">Numero</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-group">
@@ -155,14 +140,10 @@
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col">Código</th>
                                                             <th scope="col">IdVenta</th>
                                                             <th scope="col">IdCliente</th>
                                                             <th scope="col">FechaHoraVenta</th>
                                                             <th scope="col">TotalVenta</th>
-                                                            <th scope="col">Cantidad</th>
-                                                            <th scope="col">Numero</th>
-                                                            
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -171,49 +152,34 @@
                                                         include("funciones/conexionPablo.php");
 
                                                             $sentencia = "SELECT
-                                                            calzado.Codigo, 
                                                             venta.IdVenta, 
                                                             venta.IdCliente, 
                                                             venta.FechaVenta, 
-                                                            venta.TotalVenta, 
-                                                            talla.Cantidad, 
-                                                            talla.Numero, 
+                                                            venta.TotalVenta
                                                         FROM
                                                             venta
                                                             INNER JOIN
-                                                            categoria
+                                                            ventacalzado
                                                             ON 
-                                                                calzado.IdCategoria = categoria.IdCategoria
+                                                                ventacalzado.IdVentaCalzado = ventacalzado.IdVentaCalzado
                                                             INNER JOIN
-                                                            marca
+                                                            cliente
                                                             ON 
-                                                                calzado.IdMarca = marca.IdMarca
-                                                            INNER JOIN
-                                                            seccion
-                                                            ON 
-                                                                calzado.IdSeccion = seccion.IdSeccion
-                                                            INNER JOIN
-                                                            material
-                                                            ON 
-                                                                calzado.IdMaterial = material.IdMaterial
+                                                                cliente.IdCliente = cliente.IdCliente
                                                             INNER JOIN
                                                             talla
                                                             ON 
-                                                                calzado.Codigo = talla.Codigo";
+                                                                talla.IdTalla = talla.IdTalla;
 
                                                             $resultado = mysqli_query($conexion, $sentencia);
 
                                                             while($registro = mysqli_fetch_assoc($resultado)){
                                                                 echo "
                                                                 <tr>
-                                                                    <td>".$registro["Codigo"]."</td>
                                                                     <td>".$registro["IdVenta"]."</td>
                                                                     <td>".$registro["IdCliente"]."</td>
                                                                     <td>".$registro["FechaVenta"]."</td>
                                                                     <td>".$registro["TotalVenta"]."</td>
-                                                                    <td>".$registro["Cantidad"]."</td>
-                                                                    <td>".$registro["Numero"]."</td>
-                                                                    <td>".$registro["PrecioSalidaCalzado"]."</td>
                                                                     <td><a href='actualizar-producto.php?UpdateCodigo=".$registro["Codigo"]."' class='btn btn-success btn-raised btn-xs'><i class='fa-solid fa-file-pen'></i></a></td>
                                                                 </tr>";
                                                                 /*<td><a href='funciones/delete-producto.php?DeleteProducto=".$registro["Codigo"]."'><button class='btn btn-danger btn-raised btn-xs' type='button'><i class='fa-solid fa-trash'></i></button></a></td> */

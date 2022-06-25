@@ -5,19 +5,16 @@
     $idCliente= $_POST['cmbCliente'];
     $fechaHoraVenta= $_POST['txtFechaHoraVenta'];
     $totalVenta= $_POST['txtTotalVenta'];
-    $idVentaCalzado= $_POST['cmbVentaCalzado'];
     $idTalla= $_POST['cmbTalla'];
     $cantidad= $_POST['txtCantidad'];
-    $precioVenta= $_POST['txtPrecioVenta'];
 
     $sentencia = "UPDATE venta SET 
+        IdVenta = (SELECT IdVenta FROM venta WHERE TotalVenta = '$idVenta'),
         IdCliente = (SELECT IdCliente FROM cliente WHERE NombreCliente = '$idCliente'),
         FechaHoraVenta = '$fechaHoraVenta',
         TotalVenta = '$totalVenta',
-        IdVentaCalzado = (SELECT IdVentaCalzado FROM ventacalzado WHERE PrecioVenta = '$idVentaCalzado'),
         IdTalla = (SELECT IdTalla FROM talla WHERE Numero = '$idTalla'),
         Cantidad = '$cantidad',
-        PrecioVenta = '$precioVenta'
         WHERE Venta ='$idVenta';  
     ";
     
