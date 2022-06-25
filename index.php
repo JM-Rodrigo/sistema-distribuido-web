@@ -110,7 +110,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/taconazul.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/tacon.png" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 6-->
@@ -119,7 +119,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/tenisair.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/nike.png" alt="..." />
                         </div>
                     </div>
                 </div>
@@ -331,7 +331,7 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/taconazul.png" alt="..." />
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/tacon.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">Tacones elegantes para mujer de color Azul, son de plataforma de 8 cm ideales para cualquier mujer que desee salir a una fiesta o evento importante, son uno de los calzados más importantes para la mujer.</p>
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
@@ -363,7 +363,7 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/tenisair.png" alt="..." />
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/nike.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">Tenis Nike Air Unisex, es un calzado de tipo deportivo o casual se puede combinar facilmente, es un calzado muy comodo debido a la calidad es uno de los calzados más básicos que toda persona tiene.</p>
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
