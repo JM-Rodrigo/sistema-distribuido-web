@@ -1,33 +1,31 @@
 <?php
     include("conexionPablo.php");
 
-
-    $IdVenta= $_POST['cmbVenta'];
-    $IdCliente= $_POST['cmbCliente'];
-    $FechaHoraVenta= $_POST['txtFechaHoraVenta'];
-    $TotalVenta= $_POST['txtTotalVenta'];
-    $IdVentaCalzado= $_POST['cmbVentaCalzado'];
-    $IdTalla= $_POST['cmbTalla'];
-    $Cantidad= $_POST['txtCantidad'];
-    $PrecioVenta= $_POST['txtPrecioVenta'];
+    $codigo= $_POST['txtCodigo'];
+    $idVenta= $_POST['cmbVenta'];
+    $idCliente= $_POST['cmbCliente'];
+    $fechaHoraVenta= $_POST['txtFechaVenta'];
+    $totalVenta= $_POST['txtTotalVenta'];
+    $cantidad= $_POST['txtCantidad'];
+    $numero= $_POST['txtNumero'];
+    
     
 
     $sentencia = "INSERT INTO venta VALUES(
         '$idVenta',
         '$idCliente',
-        '$FechaHoraVenta',
-        $TotalVenta
+        '$fechaHoraVenta',
+        $totalVenta
         )";
     
-    $sentencia_ventacalzado = "INSERT INTO ventacalzado VALUES(
+    $sentencia_talla = "INSERT INTO talla VALUES(
         DEFAULT,
-        '$idVentaCalzado',
-        $IdTalla,
-        $Cantidad,
-        $PrecioVenta
+        '$codigo',
+        $cantidad,
+        '$numero'
         )";
 
-    if(mysqli_query($conexion,$sentencia) && mysqli_query($conexion,$sentencia_ventacalzado) ){
+    if(mysqli_query($conexion,$sentencia) && mysqli_query($conexion,$sentencia_talla) ){
         header("Location: ../venta.php");
     }else{
         echo "error".mysqli_connect_error();
