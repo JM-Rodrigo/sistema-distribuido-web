@@ -5,8 +5,6 @@
     $idCliente= $_POST['cmbCliente'];
     $fechaHoraVenta= $_POST['txtFechaVenta'];
     $totalVenta= $_POST['txtTotalVenta'];
-    $cantidad= $_POST['txtCantidad'];
-    $numero= $_POST['txtNumero'];
     
     
 
@@ -16,15 +14,8 @@
         '$fechaHoraVenta',
         $totalVenta
         )";
-    
-    $sentencia_talla = "INSERT INTO talla VALUES(
-        DEFAULT,
-        '$codigo',
-        $cantidad,
-        '$numero'
-        )";
 
-    if(mysqli_query($conexion,$sentencia) && mysqli_query($conexion,$sentencia_talla) ){
+    if(mysqli_query($conexion,$sentencia) && mysqli_query($conexion) ){
         header("Location: ../venta.php");
     }else{
         echo "error".mysqli_connect_error();

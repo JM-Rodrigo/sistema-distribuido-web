@@ -161,23 +161,19 @@
                                                             INNER JOIN
                                                             ventacalzado
                                                             ON 
-                                                                ventacalzado.IdVentaCalzado = ventacalzado.IdVentaCalzado
+                                                                venta.IdVentaCalzado = ventacalzado.IdVentaCalzado
                                                             INNER JOIN
                                                             cliente
                                                             ON 
                                                                 cliente.IdCliente = cliente.IdCliente
                                                             INNER JOIN
-                                                            talla
+                                                            FechaHoraVenta
                                                             ON 
-                                                                talla.IdTalla = talla.IdTalla
+                                                                venta.FechaHoraVenta = FechaHoraVenta.FechaHoraVenta
                                                             INNER JOIN
-                                                            material
+                                                            TotalVenta
                                                             ON 
-                                                                calzado.IdMaterial = material.IdMaterial
-                                                            INNER JOIN
-                                                            talla
-                                                            ON 
-                                                                calzado.Codigo = talla.Codigo";
+                                                                venta.TotalVenta = TotalVenta.TotalVenta";
 
                                                             $resultado = mysqli_query($conexion, $sentencia);
 
@@ -188,8 +184,6 @@
                                                                     <td>".$registro["IdCliente"]."</td>
                                                                     <td>".$registro["FechaVenta"]."</td>
                                                                     <td>".$registro["TotalVenta"]."</td>
-                                                                    <td>".$registro["Cantidad"]."</td>
-                                                                    <td>".$registro["Numero"]."</td>
                                                                     <td><a href='actualizar-producto.php?UpdateCodigo=".$registro["Codigo"]."' class='btn btn-success btn-raised btn-xs'><i class='fa-solid fa-file-pen'></i></a></td>
                                                                 </tr>";
                                                                 /*<td><a href='funciones/delete-producto.php?DeleteProducto=".$registro["Codigo"]."'><button class='btn btn-danger btn-raised btn-xs' type='button'><i class='fa-solid fa-trash'></i></button></a></td> */
