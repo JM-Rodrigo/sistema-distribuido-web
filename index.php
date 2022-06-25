@@ -171,7 +171,9 @@
                         <h4 class="text-uppercase mb-4">Contactanos</h4>
                         <p class="lead mb-0">
                             Tel:7122700464
+                            <br />
                             Tel:5568879355 
+                            <br />
                             Tel:5545258085
                         </p>
                     </div>
