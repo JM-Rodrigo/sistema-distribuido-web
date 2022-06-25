@@ -169,8 +169,15 @@
                                                             INNER JOIN
                                                             talla
                                                             ON 
-                                                                talla.IdTalla = talla.IdTalla;
-
+                                                                talla.IdTalla = talla.IdTalla
+                                                            INNER JOIN
+                                                            material
+                                                            ON 
+                                                                calzado.IdMaterial = material.IdMaterial
+                                                            INNER JOIN
+                                                            talla
+                                                            ON 
+                                                                calzado.Codigo = talla.Codigo";
 
                                                             $resultado = mysqli_query($conexion, $sentencia);
 
