@@ -67,7 +67,6 @@
                                         <input class="form-control" name="txtCodigo"  type="text" minlength="1"  maxlength="6" placeholder="Rellena el campo" data-sb-validations="required"/>
                                         <label for="name" style="color: rgb(0, 0, 0);">Código</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
-                                        <option>---Seleccione---</option>
                                     </div>
                                     <!-- Message input-->
                                     <div class="form-floating mb-3">
