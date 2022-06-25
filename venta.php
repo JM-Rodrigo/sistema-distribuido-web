@@ -67,6 +67,7 @@
                                         <input class="form-control" name="txtCodigo"  type="text" minlength="1"  maxlength="6" placeholder="Rellena el campo" data-sb-validations="required"/>
                                         <label for="name" style="color: rgb(0, 0, 0);">Código</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
+                                        <option>---Seleccione---</option>
                                     </div>
                                     <!-- Message input-->
                                     <div class="form-floating mb-3">
@@ -117,7 +118,7 @@
                                     <div class="form-group">
                                         <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Cliente</label>
                                             <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbcliente" id="cliente">
-                                                <option>---Seleccione---</option>
+                                                c
                                                 <?php
                                                     include("funciones/conexionPablo.php");
                                                     $sentencia="SELECT * FROM cliente";
