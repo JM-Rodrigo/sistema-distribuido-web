@@ -84,6 +84,16 @@
                                         <label for="name" style="color: rgb(0, 0, 0);">Precio</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="txtNumero" type="text"  minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
+                                        <label for="name" style="color: rgb(0, 0, 0);">Talla</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="txtCantidad" type="number"  minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
+                                        <label for="name" style="color: rgb(0, 0, 0);">Cantidad</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
+                                    </div>
                                     <div class="form-group">
                                         <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Material</label>
                                             <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbMaterial" id="material">
@@ -241,9 +251,9 @@
                                                                     <td>".$registro["Numero"]."</td>
                                                                     <td>".$registro["Stock"]."</td>
                                                                     <td>".$registro["PrecioSalidaCalzado"]."</td>
-                                                                    <td><a href='actualizar-alumno.php?MatriculaUpdate=".$registro["matricula"]."' class='btn btn-success btn-raised btn-xs'><i class='fa-solid fa-file-pen'></i></a></td>
-										                            <td><a href='funciones/delete-producto.php?DeleteProducto=".$registro["Codigo"]."'><button class='btn btn-danger btn-raised btn-xs' type='button'><i class='fa-solid fa-trash'></i></button></a></td>
+                                                                    <td><a href='actualizar-producto.php?UpdateCodigo=".$registro["Codigo"]."' class='btn btn-success btn-raised btn-xs'><i class='fa-solid fa-file-pen'></i></a></td>
                                                                 </tr>";
+                                                                /*<td><a href='funciones/delete-producto.php?DeleteProducto=".$registro["Codigo"]."'><button class='btn btn-danger btn-raised btn-xs' type='button'><i class='fa-solid fa-trash'></i></button></a></td> */
                                                             }
                                                                 mysqli_close($conexion);
                                                     ?>

@@ -107,16 +107,16 @@
                                 $producto = mysqli_fetch_assoc($resultado);
                                 mysqli_close($conexion);                                            
                         ?>
-                                <form action="funciones/create-producto.php" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                    <!-- Name input-->
+                
+
+                                <form action="funciones/update-producto.php" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
                                     <div class="form-floating mb-3">
                                         <input class="form-control" name="txtCodigo"  type="text" minlength="1"  maxlength="6" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $producto['Codigo'];?>"/>
                                         <label for="name" style="color: rgb(0, 0, 0);">Código</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
-                                    <!-- Message input-->
                                     <div class="form-floating mb-3">
-                                        <textarea class="form-control" name="txtDescripcion" type="text"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required" value="<?php echo $producto['DescripcionCalzado'];?>"></textarea>
+                                        <input class="form-control" name="txtDescripcion" type="text"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required" value="<?php echo $producto['DescripcionCalzado'];?>"/>
                                         <label for="message" style="color: rgb(0, 0, 0);">Descripción</label>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
                                     </div>
@@ -131,6 +131,16 @@
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-group">
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="txtNumero" type="text"  minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $producto['Numero'];?>" />
+                                        <label for="name" style="color: rgb(0, 0, 0);">Talla</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="txtCantidad" type="number"  minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $producto['Stock'];?>"/>
+                                        <label for="name" style="color: rgb(0, 0, 0);">Cantidad</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
+                                    </div>
                                         <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Material</label>
                                             <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbMaterial" id="material">
                                                 <option><?php echo $producto['NombreMaterial'];?></option>
@@ -140,7 +150,7 @@
                                                     $resultado=mysqli_query($conexion,$sentencia);
                                                     while($material=mysqli_fetch_assoc($resultado)){
                                                     echo "
-                                                    <option value='".$material['IdMaterial']."'>".$material["NombreMaterial"]."</option>
+                                                    <option value='".$material['NombreMaterial']."'>".$material["NombreMaterial"]."</option>
                                                     ";
                                                     }
                                                 ?>
@@ -156,7 +166,7 @@
                                                     $resultado=mysqli_query($conexion,$sentencia);
                                                     while($marca=mysqli_fetch_assoc($resultado)){
                                                     echo "
-                                                    <option value='".$marca['IdMarca']."'>".$marca["NombreMarca"]."</option>
+                                                    <option value='".$marca['NombreMarca']."'>".$marca["NombreMarca"]."</option>
                                                     ";
                                                     }
                                                 ?>
@@ -172,7 +182,7 @@
                                                     $resultado=mysqli_query($conexion,$sentencia);
                                                     while($categoria=mysqli_fetch_assoc($resultado)){
                                                     echo "
-                                                    <option value='".$categoria['IdCategoria']."'>".$categoria["NombreCategoria"]."</option>
+                                                    <option value='".$categoria['NombreCategoria']."'>".$categoria["NombreCategoria"]."</option>
                                                     ";
                                                     }
                                                 ?>
@@ -188,7 +198,7 @@
                                                     $resultado=mysqli_query($conexion,$sentencia);
                                                     while($seccion=mysqli_fetch_assoc($resultado)){
                                                     echo "
-                                                    <option value='".$seccion['IdSeccion']."'>".$seccion["NombreSeccion"]."</option>
+                                                    <option value='".$seccion['NombreSeccion']."'>".$seccion["NombreSeccion"]."</option>
                                                     ";
                                                     }
                                                 ?>
@@ -196,7 +206,7 @@
                                     </div>
                                             <!-- Submit Button-->		  
 										    <p class="text-center mt-4">
-										    	<button href="#tabla" class="btn btn-primary btn-xl mt-3" style="color: rgb(0, 0, 0); font-size: 100%;"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+										    	<button href="#!" class="btn btn-primary btn-xl mt-3" style="color: rgb(0, 0, 0); font-size: 100%;"><i class="fa-solid fa-floppy-disk"></i> ACTUALIZAR</button>
 										    </p>
                                 </form>
                             </div>

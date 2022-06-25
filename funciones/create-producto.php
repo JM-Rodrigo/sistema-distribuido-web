@@ -2,29 +2,36 @@
     include("conexion.php");
 
 
-    $Codigo= $_POST['txtCodigo'];
-    $DescripcionCalzado= $_POST['txtDescripcion'];
-    $ColorCalzado= $_POST['txtColor'];
-    $PrecioSalidaCalzado= $_POST['txtPrecio'];
-    $IdMaterial= $_POST['cmbMaterial'];
-    $IdMarca= $_POST['cmbMarca'];
-    $IdCategoria= $_POST['cmbCategoria'];
-    $IdSeccion= $_POST['cmbSeccion'];
-    
-
+    $codigo= $_POST['txtCodigo'];
+    $descripcionCalzado= $_POST['txtDescripcion'];
+    $colorCalzado= $_POST['txtColor'];
+    $precioSalidaCalzado= $_POST['txtPrecio'];
+    $idMaterial= $_POST['cmbMaterial'];
+    $idMarca= $_POST['cmbMarca'];
+    $idCategoria= $_POST['cmbCategoria'];
+    $idSeccion= $_POST['cmbSeccion'];
+    $cantidad= $_POST['txtCantidad'];
+    $numero= $_POST['txtNumero'];
 
     $sentencia = "INSERT INTO calzado VALUES(
-        '$Codigo',
-        '$DescripcionCalzado',
-        '$ColorCalzado',
-        $PrecioSalidaCalzado,
-        $IdMaterial,
-        $IdSeccion,
-        $IdCategoria,
-        $IdMarca
+        '$codigo',
+        '$descripcionCalzado',
+        '$colorCalzado',
+        $precioSalidaCalzado,
+        $idMaterial,
+        $idSeccion,
+        $idCategoria,
+        $idMarca
+        )";
+    
+    $sentencia_talla = "INSERT INTO talla VALUES(
+        DEFAULT,
+        '$codigo',
+        $cantidad,
+        '$numero'
         )";
 
-    if(mysqli_query($conexion,$sentencia)){
+    if(mysqli_query($conexion,$sentencia) && mysqli_query($conexion,$sentencia_talla) ){
         header("Location: ../producto.php");
     }else{
         echo "error".mysqli_connect_error();
