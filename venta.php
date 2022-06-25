@@ -171,6 +171,7 @@
                                                             ON 
                                                                 talla.IdTalla = talla.IdTalla;
 
+
                                                             $resultado = mysqli_query($conexion, $sentencia);
 
                                                             while($registro = mysqli_fetch_assoc($resultado)){
@@ -181,7 +182,9 @@
                                                                     <td>".$registro["IdCliente"]."</td>
                                                                     <td>".$registro["FechaVenta"]."</td>
                                                                     <td>".$registro["TotalVenta"]."</td>
-                                                                    
+                                                                    <td>".$registro["Cantidad"]."</td>
+                                                                    <td>".$registro["Numero"]."</td>
+                                                                    <td>".$registro["PrecioSalidaCalzado"]."</td>
                                                                     <td><a href='actualizar-producto.php?UpdateCodigo=".$registro["Codigo"]."' class='btn btn-success btn-raised btn-xs'><i class='fa-solid fa-file-pen'></i></a></td>
                                                                 </tr>";
                                                                 /*<td><a href='funciones/delete-producto.php?DeleteProducto=".$registro["Codigo"]."'><button class='btn btn-danger btn-raised btn-xs' type='button'><i class='fa-solid fa-trash'></i></button></a></td> */
