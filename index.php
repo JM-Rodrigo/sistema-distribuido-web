@@ -138,7 +138,7 @@
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Somos una Zapateria muy confiable, contamos con todo tipo de calzado con la finalidad de poder ofrder a nuestros clientes el mejor servicio y poder brindar una mejor atención.</p></div>
+                    <div class="col-lg-4 ms-auto"><p class="lead">Somos una Zapateria muy confiable, contamos con todo tipo de calzado con la finalidad de poder ofrecer a nuestros clientes el mejor servicio y poder brindar una mejor atención.</p></div>
                     <div class="col-lg-4 me-auto"><p class="lead">Nuestros Zapatos son de la mejor calidad, poseen los materiales más recistentes y duraderos que hay en el mercado, para poder ofrecer calidad y confort a nuestros clientes.</p></div>
                 </div>
                 <!-- About Section Button-->
@@ -150,20 +150,21 @@
                 <div class="row">
                     <!-- Footer Location-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <h4 class="text-uppercase mb-4">Ubicación</h4>
                         <p class="lead mb-0">
-                            2215 John Daniel Drive
+                            Calle Hidalgo 201 Colonia Centro Jilotepec
                             <br />
-                            Clark, MO 65243
+                            A un costado de la iglesia 
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                        <h4 class="text-uppercase mb-4">Redes Sociales</h4>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-pinterest"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-tick tock"></i></a>
                     </div>
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
