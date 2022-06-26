@@ -1,5 +1,5 @@
 <?php
-    include("conexion.php");
+    include("conexionPablo.php");
 
     $idVenta= $_POST['cmbCodigo'];
     $fechaVenta= $_POST['txtFechaVenta'];
