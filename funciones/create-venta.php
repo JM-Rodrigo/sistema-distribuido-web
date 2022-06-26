@@ -1,21 +1,20 @@
 <?php
-    include("conexionPablo.php");
+    include("conexion.php");
 
-    $idVenta= $_POST['cmbVenta'];
-    $idCliente= $_POST['cmbCliente'];
-    $fechaHoraVenta= $_POST['txtFechaVenta'];
-    $totalVenta= $_POST['txtTotalVenta'];
+    $idVenta= $_POST['cmbCodigo'];
+    $fechaVenta= $_POST['txtFechaVenta'];
+    $catidadVenta= $_POST['txtCantidad'];
+    $precioVenta= $_POST['txtPrecio'];
     
-    
-
-    $sentencia = "INSERT INTO venta VALUES(
+    $sentencia = "INSERT INTO ventacalzado VALUES(
+        DEFAULT,
         '$idVenta',
-        '$idCliente',
-        '$fechaHoraVenta',
-        $totalVenta
+        '$fechaVenta',
+        $catidadVenta,
+        '$precioVenta'
         )";
 
-    if(mysqli_query($conexion,$sentencia) && mysqli_query($conexion) ){
+    if(mysqli_query($conexion,$sentencia)){
         header("Location: ../venta.php");
     }else{
         echo "error".mysqli_connect_error();

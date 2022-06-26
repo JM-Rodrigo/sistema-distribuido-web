@@ -61,61 +61,39 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-                                <form action="funciones/create-producto.php" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                    <!-- Name input-->
+                                <form action="funciones/create-venta.php" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                    <div class="form-group">
+                                            <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Código</label>
+                                                <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbCodigo" id="codigo">
+                                                    <option>---Seleccione---</option>
+                                                    <?php
+                                                        include("funciones/conexion.php");
+                                                        $sentencia="SELECT * FROM talla";
+                                                        $resultado=mysqli_query($conexion,$sentencia);
+                                                        while($material=mysqli_fetch_assoc($resultado)){
+                                                        echo "
+                                                        <option value='".$material['IdTalla']."'>".$material["Codigo"]."</option>
+                                                        ";
+                                                        }
+                                                    ?>
+                                                </select>
+                                    </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtCodigo"  type="text" minlength="1"  maxlength="6" placeholder="Rellena el campo" data-sb-validations="required"/>
-                                        <label for="name" style="color: rgb(0, 0, 0);">IdVenta</label>
+                                        <input class="form-control" name="txtFechaVenta" type="date" placeholder="Rellena el campo" data-sb-validations="required" />
+                                        <label for="name" style="color: rgb(0, 0, 0);">Fecha</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
-                                    <!-- Message input-->
                                     <div class="form-floating mb-3">
-                                        <textarea class="form-control" name="txtDescripcion" type="text"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required"></textarea>
-                                        <label for="message" style="color: rgb(0, 0, 0);">IdCliente</label>
-                                        <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtColor"  type="text"  minlength="1"  maxlength="30" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">FechaHoraVenta</label>
+                                        <input class="form-control" name="txtCantidad" type="number"  minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
+                                        <label for="name" style="color: rgb(0, 0, 0);">Cantidad</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" name="txtPrecio" type="number" step="0.01" minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">TotalVenta</label>
+                                        <label for="name" style="color: rgb(0, 0, 0);">Precio</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Venta</label>
-                                            <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbVenta" id="venta">
-                                                <?php
-                                                    include("funciones/conexionPablo.php");
-                                                    $sentencia="SELECT * FROM venta";
-                                                    $resultado=mysqli_query($conexion,$sentencia);
-                                                    while($idVenta=mysqli_fetch_assoc($resultado)){
-                                                    echo "
-                                                    <option value='".$idVenta['IdVenta']."'>".$idVenta["TotalVenta"]."</option>
-                                                    ";
-                                                    }
-                                                ?>
-                                            </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Cliente</label>
-                                            <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbcliente" id="cliente">
-                                                c
-                                                <?php
-                                                    include("funciones/conexionPablo.php");
-                                                    $sentencia="SELECT * FROM cliente";
-                                                    $resultado=mysqli_query($conexion,$sentencia);
-                                                    while($idCliente=mysqli_fetch_assoc($resultado)){
-                                                    echo "
-                                                    <option value='".$idCliente['IdCliente']."'>".$idCliente["NombreCliente"]."</option>
-                                                    ";
-                                                    }
-                                                ?>
-                                            </select>
-                                    </div>
-                                            <!-- Submit Button-->		  
+                                                                               <!-- Submit Button-->		  
 										    <p class="text-center mt-4">
 										    	<button href="#tabla" class="btn btn-primary btn-xl mt-3" style="color: rgb(0, 0, 0); font-size: 100%;"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
 										    </p>
@@ -140,51 +118,39 @@
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col">IdVenta</th>
-                                                            <th scope="col">IdCliente</th>
-                                                            <th scope="col">FechaHoraVenta</th>
-                                                            <th scope="col">TotalVenta</th>
+                                                            <th scope="col">Código</th>
+                                                            <th scope="col">Fecha</th>
+                                                            <th scope="col">Cantidad</th>
+                                                            <th scope="col">Precio</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
 
                                                     <?php
-                                                        include("funciones/conexionPablo.php");
+                                                        include("funciones/conexion.php");
 
                                                             $sentencia = "SELECT
-                                                            venta.IdVenta, 
-                                                            venta.IdCliente, 
-                                                            venta.FechaVenta, 
-                                                            venta.TotalVenta
+                                                            talla.Codigo, 
+                                                            ventacalzado.FechaVenta, 
+                                                            ventacalzado.Cantidad, 
+                                                            ventacalzado.PrecioVenta
                                                         FROM
-                                                            venta
-                                                            INNER JOIN
                                                             ventacalzado
-                                                            ON 
-                                                                venta.IdVentaCalzado = ventacalzado.IdVentaCalzado
                                                             INNER JOIN
-                                                            cliente
+                                                            talla
                                                             ON 
-                                                                cliente.IdCliente = cliente.IdCliente
-                                                            INNER JOIN
-                                                            FechaHoraVenta
-                                                            ON 
-                                                                venta.FechaHoraVenta = FechaHoraVenta.FechaHoraVenta
-                                                            INNER JOIN
-                                                            TotalVenta
-                                                            ON 
-                                                                venta.TotalVenta = TotalVenta.TotalVenta";
+                                                                ventacalzado.IdTalla = talla.IdTalla";
 
                                                             $resultado = mysqli_query($conexion, $sentencia);
 
-                                                            while($registro = mysqli_fetch_assoc($resultado)){
+                                                            while($venta = mysqli_fetch_assoc($resultado)){
                                                                 echo "
                                                                 <tr>
-                                                                    <td>".$registro["IdVenta"]."</td>
-                                                                    <td>".$registro["IdCliente"]."</td>
-                                                                    <td>".$registro["FechaVenta"]."</td>
-                                                                    <td>".$registro["TotalVenta"]."</td>
-                                                                    <td><a href='actualizar-producto.php?UpdateCodigo=".$registro["Codigo"]."' class='btn btn-success btn-raised btn-xs'><i class='fa-solid fa-file-pen'></i></a></td>
+                                                                    <td>".$venta["Codigo"]."</td>
+                                                                    <td>".$venta["FechaVenta"]."</td>
+                                                                    <td>".$venta["Cantidad"]."</td>
+                                                                    <td>".$venta["PrecioVenta"]."</td>
+                                                                    <td><a href='actualizar-producto.php?UpdateCodigo=".$venta["Codigo"]."' class='btn btn-success btn-raised btn-xs'><i class='fa-solid fa-file-pen'></i></a></td>
                                                                 </tr>";
                                                                 /*<td><a href='funciones/delete-producto.php?DeleteProducto=".$registro["Codigo"]."'><button class='btn btn-danger btn-raised btn-xs' type='button'><i class='fa-solid fa-trash'></i></button></a></td> */
                                                             }
