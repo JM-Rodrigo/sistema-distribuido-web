@@ -82,7 +82,7 @@
                                 calzado.Codigo = '$codigo' ";
 
                                 $resultado = mysqli_query($conexion,$sentencia);	
-                                $producto = mysqli_fetch_assoc($resultado);
+                                $venta = mysqli_fetch_assoc($resultado);
                                 mysqli_close($conexion);                                            
                         ?>
                 
