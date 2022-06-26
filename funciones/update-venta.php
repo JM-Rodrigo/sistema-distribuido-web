@@ -1,16 +1,16 @@
 <?php
-    include("conexionPablo.php");
+     include("conexionPablo.php");
 
-    $codigo= $_POST['txtCodigo'];
-    $fechaHoraVenta= $_POST['txtFechaVenta'];
-    $cantidad= $_POST['txtCantidad'];
-    $precio= $_POST['txtPrecio'];
+     $idVenta= $_POST['cmbCodigo'];
+     $fechaVenta= $_POST['txtFechaVenta'];
+     $catidadVenta= $_POST['txtCantidad'];
+     $precioVenta= $_POST['txtPrecio'];
 
     $sentencia = "UPDATE venta SET 
-        FechaVenta = '$fechaHoraVenta',
-        Cantidad = '$cantidad',
-        Precio = '$precio'
-        WHERE Codigo ='$codigo'; 
+        FechaVenta = '$fechaVenta',
+        Cantidad = '$cantidadVenta',
+        Precio = '$precioVenta'
+        WHERE Codigo ='$idVenta'; 
     ";
     
 
