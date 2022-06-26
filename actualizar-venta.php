@@ -92,6 +92,7 @@
                                         <input class="form-control" name="txtCodigo"  type="text" minlength="1"  maxlength="6" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $venta['Codigo'];?>"/>
                                         <label for="name" style="color: rgb(0, 0, 0);">Código</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
+                                        <option>---Seleccione---</option>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" name="txtFechaVenta" type="date"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required" value="<?php echo $venta['FechaVenta'];?>"/>
