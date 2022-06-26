@@ -61,11 +61,54 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-                                <form action="funciones/create-venta.php" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                    <div class="form-group">
-                                            <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Código</label>
-                                                <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbCodigo" id="codigo">
-                                                    <option>---Seleccione---</option>
+
+                        <?php
+
+                                include("funciones/conexionPablo.php");
+                                $codigo = $_GET['UpdateCodigo'];
+
+                                $sentencia = "SELECT
+                                talla.Codigo, 
+                                ventacalzado.FechaVenta, 
+                                ventacalzado.Cantidad, 
+                                ventacalzado.PrecioVenta
+                            FROM
+                                calzado
+                                INNER JOIN
+                                talla
+                                ON 
+                                ventacalzado.IdTalla = talla.IdTalla
+                                   
+                            WHERE
+                                calzado.Codigo = '$codigo' ";
+
+                                $resultado = mysqli_query($conexion,$sentencia);	
+                                $producto = mysqli_fetch_assoc($resultado);
+                                mysqli_close($conexion);                                            
+                        ?>
+                
+
+                                <form action="funciones/update-producto.php" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="txtCodigo"  type="text" minlength="1"  maxlength="6" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $producto['Codigo'];?>"/>
+                                        <label for="name" style="color: rgb(0, 0, 0);">Código</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="txtDescripcion" type="text"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required" value="<?php echo $producto['DescripcionCalzado'];?>"/>
+                                        <label for="message" style="color: rgb(0, 0, 0);">Fecha</label>
+                                        <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="txtColor"  type="text"  minlength="1"  maxlength="30" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $producto['ColorCalzado'];?>"/>
+                                        <label for="name" style="color: rgb(0, 0, 0);">Cantidad</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="txtPrecio" type="number" step="0.01" minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $producto['PrecioSalidaCalzado'];?>" />
+                                        <label for="name" style="color: rgb(0, 0, 0);">Precio</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
+                                    </div>
                                                     <?php
                                                         include("funciones/conexionPablo.php");
                                                         $sentencia="SELECT * FROM talla";
@@ -76,96 +119,15 @@
                                                         ";
                                                         }
                                                     ?>
-                                                </select>
+                                            </select>
                                     </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtFechaVenta" type="date" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">Fecha</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtCantidad" type="number"  minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">Cantidad</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtPrecio" type="number" step="0.01" minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">Precio</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
-                                    </div>
-                                                                               <!-- Submit Button-->		  
+                                            <!-- Submit Button-->		  
 										    <p class="text-center mt-4">
-										    	<button href="#tabla" class="btn btn-primary btn-xl mt-3" style="color: rgb(0, 0, 0); font-size: 100%;"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+										    	<button href="#!" class="btn btn-primary btn-xl mt-3" style="color: rgb(0, 0, 0); font-size: 100%;"><i class="fa-solid fa-floppy-disk"></i> ACTUALIZAR</button>
 										    </p>
                                 </form>
                             </div>
                         </div>
-                        <section class="page-section" id="tabla">
-                            <div class="container">
-                                <!-- Contact Section Heading-->
-                                <h5 class="page-section-heading text-center text-uppercase text-secondary mb-0">Lista de productos</h5>
-                                <!-- Icon Divider-->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Contact Section Form-->
-                                <div class="row justify-content-center">
-                                        <div class="col-lg-8 col-xl-7">
-                                            <div class="form-floating mb-3">
-                                            <font SIZE=4>
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">Código</th>
-                                                            <th scope="col">Fecha</th>
-                                                            <th scope="col">Cantidad</th>
-                                                            <th scope="col">Precio</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-
-                                                    <?php
-                                                        include("funciones/conexionPablo.php");
-
-                                                            $sentencia = "SELECT
-                                                            talla.Codigo, 
-                                                            ventacalzado.FechaVenta, 
-                                                            ventacalzado.Cantidad, 
-                                                            ventacalzado.PrecioVenta
-                                                        FROM
-                                                            ventacalzado
-                                                            INNER JOIN
-                                                            talla
-                                                            ON 
-                                                                ventacalzado.IdTalla = talla.IdTalla";
-
-                                                            $resultado = mysqli_query($conexion, $sentencia);
-
-                                                            while($venta = mysqli_fetch_assoc($resultado)){
-                                                                echo "
-                                                                <tr>
-                                                                    <td>".$venta["Codigo"]."</td>
-                                                                    <td>".$venta["FechaVenta"]."</td>
-                                                                    <td>".$venta["Cantidad"]."</td>
-                                                                    <td>".$venta["PrecioVenta"]."</td>
-                                                                    <td><a href='actualizar-venta.php?UpdateCodigo=".$venta["Codigo"]."' class='btn btn-success btn-raised btn-xs'><i class='fa-solid fa-file-pen'></i></a></td>
-                                                                </tr>";
-                                                                /*<td><a href='funciones/delete-producto.php?DeleteProducto=".$registro["Codigo"]."'><button class='btn btn-danger btn-raised btn-xs' type='button'><i class='fa-solid fa-trash'></i></button></a></td> */
-                                                            }
-                                                                mysqli_close($conexion);
-                                                    ?>
-                                                    </tbody>
-                                                </table>
-                                            </font>
-                                            </div> 
-                                        
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
                 </div>
             </div>
         </section>           
