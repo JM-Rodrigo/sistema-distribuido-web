@@ -110,11 +110,11 @@
                                     </div>
                                                 <?php
                                                         include("funciones/conexionPablo.php");
-                                                        $sentencia="SELECT * FROM venta;
+                                                        $sentencia="SELECT * FROM talla"<;
                                                         $resultado=mysqli_query($conexion,$sentencia);
-                                                        while($idVenta=mysqli_fetch_assoc($resultado)){
+                                                        while($material=mysqli_fetch_assoc($resultado)){
                                                         echo "
-                                                        <option value='".$codigo['$idVenta']."'>".$codigo["Codigo"]."</option>
+                                                        <option value='".$material['IdTalla']."'>".$material["Codigo"]."</option>
                                                         ";
                                                         }
                                                     ?>
