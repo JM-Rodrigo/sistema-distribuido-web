@@ -82,10 +82,19 @@
                             WHERE
                                 calzado.Codigo = '$codigo' ";
 
-                                $resultado = mysqli_query($conexion,$sentencia);	
-                                $producto = mysqli_fetch_assoc($resultado);
-                                mysqli_close($conexion);                                            
-                        ?>
+                            $resultado = mysqli_query($conexion, $sentencia);
+
+                            while($venta = mysqli_fetch_assoc($resultado)){
+                            echo "
+                            <tr>
+                                <td>".$venta["Codigo"]."</td>
+                                <td>".$venta["FechaVenta"]."</td>
+                                <td>".$venta["Cantidad"]."</td>
+                                <td>".$venta["PrecioVenta"]."</td>   
+                                </tr>";
+                            }
+                            mysqli_close($conexion);                                        
+                                ?>
                 
 
                                 <form action="funciones/update-producto.php" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
