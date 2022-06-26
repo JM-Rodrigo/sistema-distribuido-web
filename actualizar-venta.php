@@ -44,7 +44,7 @@
         <section class="page-section" id="registro">
             <div class="container">
                 <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Registrar Venta</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Actualizar Venta</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -73,31 +73,21 @@
                                 ventacalzado.Cantidad, 
                                 ventacalzado.PrecioVenta
                             FROM
-                                calzado
+                                ventacalzado
                                 INNER JOIN
                                 talla
                                 ON 
-                                ventacalzado.IdTalla = talla.IdTalla
-                                   
+                                    ventacalzado.IdTalla = talla.IdTalla
                             WHERE
                                 calzado.Codigo = '$codigo' ";
 
-                            $resultado = mysqli_query($conexion, $sentencia);
-
-                            while($venta = mysqli_fetch_assoc($resultado)){
-                            echo "
-                            <tr>
-                                <td>".$venta["Codigo"]."</td>
-                                <td>".$venta["FechaVenta"]."</td>
-                                <td>".$venta["Cantidad"]."</td>
-                                <td>".$venta["PrecioVenta"]."</td>   
-                                </tr>";
-                            }
-                            mysqli_close($conexion);                                        
-                                ?>
+                                $resultado = mysqli_query($conexion,$sentencia);	
+                                $producto = mysqli_fetch_assoc($resultado);
+                                mysqli_close($conexion);                                            
+                        ?>
                 
 
-                                <form action="funciones/update-producto.php" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <form action="funciones/update-venta.php" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
                                     <div class="form-floating mb-3">
                                         <input class="form-control" name="txtCodigo"  type="text" minlength="1"  maxlength="6" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $producto['Codigo'];?>"/>
                                         <label for="name" style="color: rgb(0, 0, 0);">Código</label>
