@@ -108,6 +108,9 @@
                                         <label for="name" style="color: rgb(0, 0, 0);">Precio</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
+                                    <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Material</label>
+                                            <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbMaterial" id="material">
+                                                <option><?php echo $producto['NombreMaterial'];?></option>
                                                 <?php
                                                         include("funciones/conexionPablo.php");
                                                         $sentencia="SELECT * FROM talla";
