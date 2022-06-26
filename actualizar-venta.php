@@ -89,28 +89,25 @@
 
                                 <form action="funciones/update-venta.php" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtCodigo"  type="text" minlength="1"  maxlength="6" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $producto['Codigo'];?>"/>
+                                        <input class="form-control" name="cmbCodigo"  type="text" minlength="1"  maxlength="6" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $producto['Codigo'];?>"/>
                                         <label for="name" style="color: rgb(0, 0, 0);">Código</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtDescripcion" type="text"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required" value="<?php echo $producto['DescripcionCalzado'];?>"/>
+                                        <input class="form-control" name="txtFechaVenta" type="text"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required" value="<?php echo $producto['FechaVenta'];?>"/>
                                         <label for="message" style="color: rgb(0, 0, 0);">Fecha</label>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtColor"  type="text"  minlength="1"  maxlength="30" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $producto['ColorCalzado'];?>"/>
+                                        <input class="form-control" name="txtCantidad"  type="text"  minlength="1"  maxlength="30" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $producto['Cantidad'];?>"/>
                                         <label for="name" style="color: rgb(0, 0, 0);">Cantidad</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtPrecio" type="number" step="0.01" minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $producto['PrecioSalidaCalzado'];?>" />
+                                        <input class="form-control" name="txtPrecio" type="number" step="0.01" minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $producto['PrecioVenta'];?>" />
                                         <label for="name" style="color: rgb(0, 0, 0);">Precio</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
-                                        <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Material</label>
-                                            <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbMaterial" id="material">
-                                                <option><?php echo $venta['NombreMaterial'];?></option>
                                                 <?php
                                                         include("funciones/conexionPablo.php");
                                                         $sentencia="SELECT * FROM talla";
