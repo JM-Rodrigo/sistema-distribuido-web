@@ -89,8 +89,8 @@
 
                                 <form action="funciones/update-venta.php" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
                                 <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtCodigo"  type="text" minlength="1"  maxlength="6" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $venta['Codigo'];?>"/>
-                                        <label for="name" style="color: rgb(0, 0, 0);">Código</label>
+                                        <input class="form-control" name="txtPrecio"  type="number" minlength="1"  maxlength="6" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $venta['PrecioVenta'];?>"/>
+                                        <label for="name" style="color: rgb(0, 0, 0);">Precio</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                         <option>---Seleccione---</option>
                                     </div>
@@ -105,8 +105,8 @@
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtPrecio" type="number" step="" minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $venta['PrecioVenta'];?>" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">Precio</label>
+                                        <input class="form-control" name="txtCodigo" type="number" step="" minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $venta['Codigo'];?>" />
+                                        <label for="name" style="color: rgb(0, 0, 0);">Código</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                                 <?php
