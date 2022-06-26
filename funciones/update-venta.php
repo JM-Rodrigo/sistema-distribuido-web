@@ -1,17 +1,16 @@
 <?php
     include("conexionPablo.php");
 
-    $idVenta= $_POST['cmbVenta'];
-    $idCliente= $_POST['cmbCliente'];
-    $fechaHoraVenta= $_POST['txtFechaHoraVenta'];
-    $totalVenta= $_POST['txtTotalVenta'];
+    $codigo= $_POST['txtCodigo'];
+    $fechaHoraVenta= $_POST['txtFechaVenta'];
+    $cantidad= $_POST['txtCantidad'];
+    $precio= $_POST['txtPrecio'];
 
     $sentencia = "UPDATE venta SET 
-        IdVenta = (SELECT IdVenta FROM venta WHERE TotalVenta = '$idVenta'),
-        IdCliente = (SELECT IdCliente FROM cliente WHERE NombreCliente = '$idCliente'),
-        FechaHoraVenta = '$fechaHoraVenta',
-        TotalVenta = '$totalVenta',
-        WHERE Venta ='$idVenta';  
+        FechaVenta = '$fechaHoraVenta',
+        Cantidad = '$cantidad',
+        Precio = '$precio'
+        WHERE Codigo ='$codigo'; 
     ";
     
 
