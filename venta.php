@@ -151,8 +151,9 @@
                                                                     <td>".$venta["FechaVenta"]."</td>
                                                                     <td>".$venta["Cantidad"]."</td>
                                                                     <td>".$venta["PrecioVenta"]."</td>
-                                                                    <td><a href='actualizar-venta.php?UpdateVenta=".$venta["IdVentaCalzado"]."' class='btn btn-success btn-raised btn-xs'><i class='fa-solid fa-file-pen'></i></a></td>
                                                                 </tr>";
+                                                                /*<td><a href='actualizar-venta.php?UpdateVenta=".$venta["IdVentaCalzado"]."' class='btn btn-success btn-raised btn-xs'><i class='fa-solid fa-file-pen'></i></a></td> */
+
                                                                 /*<td><a href='funciones/delete-producto.php?DeleteProducto=".$registro["Codigo"]."'><button class='btn btn-danger btn-raised btn-xs' type='button'><i class='fa-solid fa-trash'></i></button></a></td> */
                                                             }
                                                                 mysqli_close($conexion);
