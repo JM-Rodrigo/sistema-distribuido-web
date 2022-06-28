@@ -138,9 +138,9 @@
                                                             FROM
                                                                 calzado
                                                             INNER JOIN
-                                                                marca
+                                                                codigo
                                                             ON 
-                                                                calzado.IdMarca = marca.IdMarca";
+                                                                calzado.codigo = calzado.codigo";
 
                                                             $resultado = mysqli_query($conexion, $sentencia);
 
