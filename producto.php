@@ -84,6 +84,7 @@
                                         <label for="name" style="color: rgb(0, 0, 0);">Cantidad</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
+                                    <div class="form-floating mb-3">
                                         <input class="form-control" name="txtTalla" type="text"  minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
                                         <label for="name" style="color: rgb(0, 0, 0);">Talla</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
@@ -100,7 +101,7 @@
                                             <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbMarca" id="marca">
                                                 <option>---Seleccione---</option>
                                                 <?php
-                                                    include("funciones/conexion.php");
+                                                    include("funciones/conexionRodrigo.php");
                                                     $sentencia="SELECT * FROM marca";
                                                     $resultado=mysqli_query($conexion,$sentencia);
                                                     while($marca=mysqli_fetch_assoc($resultado)){
