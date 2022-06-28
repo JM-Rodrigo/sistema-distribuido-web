@@ -64,7 +64,7 @@
 
                         <?php
 
-                                include("funciones/conexion.php");
+                                include("funciones/conexionPablo.php");
                                 $idVenta = $_GET['UpdateVenta'];
 
                                 $sentencia = "SELECT
