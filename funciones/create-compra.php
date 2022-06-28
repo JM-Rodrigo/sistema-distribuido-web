@@ -2,15 +2,17 @@
     include("conexionJonathan.php");
 
     $idCompra= $_POST['cmbCodigo'];
-    $fechaCompra= $_POST['txtFechaVenta'];
-    $catidadCompra= $_POST['txtCantidad'];
-    $precioCompra= $_POST['txtPrecio'];
+    $codigo = $_POST['txtCodigoCompra'];
+    $catidadCompra= $_POST['txtCantidadCompra'];
+    $fechaCompra= $_POST['txtFechaCompra'];
+    $precioCompra= $_POST['txtPrecioCompra'];
     
     $sentencia = "INSERT INTO compra VALUES(
         DEFAULT,
         '$idCompra',
+        '$codigo',
+        '$catidadCompra',
         '$fechaCompra',
-        $catidadCompra,
         '$precioCompra'
         )";
 
