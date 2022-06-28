@@ -14,7 +14,7 @@
         '$CantidadCompra',
         '$FechaHoraCompra',
         '$PrecioCompra',
-        '$idProveedor'                                                          
+        '$IdProveedor'                                                          
         )";
 
     if(mysqli_query($conexion,$sentencia)){
