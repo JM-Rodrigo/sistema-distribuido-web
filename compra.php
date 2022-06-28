@@ -103,9 +103,9 @@
                                                         include("funciones/conexionJonathan.php");
                                                         $sentencia="SELECT * FROM calzado";
                                                         $resultado=mysqli_query($conexion,$sentencia);
-                                                        while($material=mysqli_fetch_assoc($resultado)){
+                                                        while($marca=mysqli_fetch_assoc($resultado)){
                                                         echo "
-                                                        <option value='".$material['Codigo']."'>".$material["idMarca"]."</option>
+                                                        <option value='".$marca['Codigo']."'>".$marca["idMarca"]."</option>
                                                         ";
                                                         }
                                                     ?>
