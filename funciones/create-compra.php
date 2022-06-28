@@ -9,11 +9,11 @@
     
     $sentencia = "INSERT INTO compra VALUES(
         DEFAULT,
-        '$idCompra',
         '$codigo',
         '$catidadCompra',
         '$fechaCompra',
-        '$precioCompra'
+        '$precioCompra',
+        '$idProveedor'
         )";
 
     if(mysqli_query($conexion,$sentencia)){
