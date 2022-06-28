@@ -1,20 +1,14 @@
 <?php
-     include("conexionPablo.php");
+    include("conexion.php");
 
-     $idVenta= $_POST['cmbCodigo'];
-     $fechaVenta= $_POST['txtFechaVenta'];
-     $catidadVenta= $_POST['txtCantidad'];
-     $precioVenta= $_POST['txtPrecio'];
+    $codigo= $_POST['cmbCodigo'];
+    $fechaVenta= $_POST['txtFechaVenta'];
+    $cantidad= $_POST['txtCantidad'];
+    $precio= $_POST['txtPrecio'];
 
-    $sentencia = "UPDATE venta SET 
-        FechaVenta = '$fechaVenta',
-        Cantidad = '$cantidad',
-        Precio = '$precioVenta'
-        WHERE Codigo ='$idVenta'; 
-    ";
     
 
-    if(mysqli_query($conexion,$sentencia) && mysqli_query($conexion) ){
+    if(mysqli_query($conexion,$sentencia) ){
         header("Location: ../venta.php");
     }else{
         echo "error".mysqli_connect_error();
