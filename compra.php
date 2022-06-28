@@ -44,7 +44,7 @@
         <section class="page-section" id="registro">
             <div class="container">
                 <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Registro</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Compra</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -75,8 +75,8 @@
                                         <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtColor"  type="text"  minlength="1"  maxlength="30" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">Color</label>
+                                    <input class="form-control" name="txtFechaVenta" type="date" placeholder="Rellena el campo" data-sb-validations="required" />
+                                        <label for="name" style="color: rgb(0, 0, 0);">Fecha</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
