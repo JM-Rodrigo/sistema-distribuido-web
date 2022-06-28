@@ -71,7 +71,7 @@
                                     <!-- Message input-->
                                     <div class="form-floating mb-3">
                                         <textarea class="form-control" name="txtDescripcion" type="text"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required"></textarea>
-                                        <label for="message" style="color: rgb(0, 0, 0);">Descripción</label>
+                                        <label for="message" style="color: rgb(0, 0, 0);">Cantidad Compra</label>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" name="txtPrecio" type="number" step="0.01" minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">Precio</label>
+                                        <label for="name" style="color: rgb(0, 0, 0);">Precio Compra</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
@@ -99,12 +99,12 @@
                                             <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbMaterial" id="material">
                                                 <option>---Seleccione---</option>
                                                 <?php
-                                                    include("funciones/conexion.php");
-                                                    $sentencia="SELECT * FROM material";
+                                                    include("funciones/conexionJonathan.php");
+                                                    $sentencia="SELECT * FROM compra";
                                                     $resultado=mysqli_query($conexion,$sentencia);
                                                     while($material=mysqli_fetch_assoc($resultado)){
                                                     echo "
-                                                    <option value='".$material['IdMaterial']."'>".$material["NombreMaterial"]."</option>
+                                                    <option value='".$material['IdCompra']."'>".$material["NombreCompra"]."</option>
                                                     ";
                                                     }
                                                 ?>
