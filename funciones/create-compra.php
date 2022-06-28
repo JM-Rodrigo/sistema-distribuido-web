@@ -6,15 +6,14 @@
     $CantidadCompra= $_POST['txtCantidadCompra'];
     $FechaHoraCompra= $_POST['txtFechaCompra'];
     $PrecioCompra= $_POST['txtPrecioCompra'];
-    $Codigo = $_POST['cmbProveedor'];
+    //$Codigo = $_POST['cmbProveedor'];
     
     $sentencia = "INSERT INTO compra VALUES(
         DEFAULT,
         '$Codigo',
         '$CantidadCompra',
         '$FechaHoraCompra',
-        '$PrecioCompra',
-        '$Codigo'                                                          
+        '$PrecioCompra'                                                    
         )";
 
     if(mysqli_query($conexion,$sentencia)){
