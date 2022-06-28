@@ -113,7 +113,7 @@
                                                             <th scope="col">Código</th>
                                                             <th scope="col">Cantidad Compra</th>
                                                             <th scope="col">Fecha</th>
-                                                            <th scope="col">Precio Compra</th>
+                                                            <th scope="col">$precioCompra</th>
                                                             <th scope="col"></th>
                                                             
                                                         </tr>
@@ -124,17 +124,38 @@
                                                         include("funciones/conexionJonathan.php");
 
                                                             $sentencia = "SELECT
-                                                            compra.Codigo, 
-                                                            compra.CantidadCompra, 
-                                                            compra.FechaHoraCompra, 
-                                                            compra.PrecioCompra
+                                                            calzado.Codigo, 
+                                                            calzado.DescripcionCalzado, 
+                                                            calzado.ColorCalzado, 
+                                                            material.NombreMaterial, 
+                                                            marca.NombreMarca, 
+                                                            categoria.NombreCategoria, 
+                                                            seccion.NombreSeccion, 
+                                                            talla.Numero, 
+                                                            talla.Stock, 
+                                                            calzado.PrecioSalidaCalzado
                                                         FROM
-                                                            compra
+                                                            calzado
                                                             INNER JOIN
-                                                            proveedor
+                                                            categoria
                                                             ON 
-                                                                proveedor.IdProveedor = proveedor.IdProveedor
-                                                            
+                                                                calzado.IdCategoria = categoria.IdCategoria
+                                                            INNER JOIN
+                                                            marca
+                                                            ON 
+                                                                calzado.IdMarca = marca.IdMarca
+                                                            INNER JOIN
+                                                            seccion
+                                                            ON 
+                                                                calzado.IdSeccion = seccion.IdSeccion
+                                                            INNER JOIN
+                                                            material
+                                                            ON 
+                                                                calzado.IdMaterial = material.IdMaterial
+                                                            INNER JOIN
+                                                            talla
+                                                            ON 
+                                                                calzado.Codigo = talla.Codigo";
 
                                                             $resultado = mysqli_query($conexion, $sentencia);
 
