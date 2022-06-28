@@ -44,7 +44,7 @@
         <section class="page-section" id="registro">
             <div class="container">
                 <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Registro</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Compra</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -71,92 +71,14 @@
                                     <!-- Message input-->
                                     <div class="form-floating mb-3">
                                         <textarea class="form-control" name="txtDescripcion" type="text"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required"></textarea>
-                                        <label for="message" style="color: rgb(0, 0, 0);">Descripción</label>
+                                        <label for="message" style="color: rgb(0, 0, 0);">Cantidad Compra</label>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtColor"  type="text"  minlength="1"  maxlength="30" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">Color</label>
+                                    <input class="form-control" name="txtFechaVenta" type="date" placeholder="Rellena el campo" data-sb-validations="required" />
+                                        <label for="name" style="color: rgb(0, 0, 0);">Fecha</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtPrecio" type="number" step="0.01" minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">Precio</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtNumero" type="text"  minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">Talla</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtCantidad" type="number"  minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" />
-                                        <label for="name" style="color: rgb(0, 0, 0);">Cantidad</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Material</label>
-                                            <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbMaterial" id="material">
-                                                <option>---Seleccione---</option>
-                                                <?php
-                                                    include("funciones/conexion.php");
-                                                    $sentencia="SELECT * FROM material";
-                                                    $resultado=mysqli_query($conexion,$sentencia);
-                                                    while($material=mysqli_fetch_assoc($resultado)){
-                                                    echo "
-                                                    <option value='".$material['IdMaterial']."'>".$material["NombreMaterial"]."</option>
-                                                    ";
-                                                    }
-                                                ?>
-                                            </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Marca</label>
-                                            <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbMarca" id="marca">
-                                                <option>---Seleccione---</option>
-                                                <?php
-                                                    include("funciones/conexion.php");
-                                                    $sentencia="SELECT * FROM marca";
-                                                    $resultado=mysqli_query($conexion,$sentencia);
-                                                    while($marca=mysqli_fetch_assoc($resultado)){
-                                                    echo "
-                                                    <option value='".$marca['IdMarca']."'>".$marca["NombreMarca"]."</option>
-                                                    ";
-                                                    }
-                                                ?>
-                                            </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Categoria</label>
-                                            <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbCategoria" id="categoria">
-                                                <option>---Seleccione---</option>
-                                                <?php
-                                                    include("funciones/conexion.php");
-                                                    $sentencia="SELECT * FROM categoria";
-                                                    $resultado=mysqli_query($conexion,$sentencia);
-                                                    while($categoria=mysqli_fetch_assoc($resultado)){
-                                                    echo "
-                                                    <option value='".$categoria['IdCategoria']."'>".$categoria["NombreCategoria"]."</option>
-                                                    ";
-                                                    }
-                                                ?>
-                                            </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Sección</label>
-                                            <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbSeccion" id="seccion">
-                                                <option>---Seleccione---</option>
-                                                <?php
-                                                    include("funciones/conexion.php");
-                                                    $sentencia="SELECT * FROM seccion";
-                                                    $resultado=mysqli_query($conexion,$sentencia);
-                                                    while($seccion=mysqli_fetch_assoc($resultado)){
-                                                    echo "
-                                                    <option value='".$seccion['IdSeccion']."'>".$seccion["NombreSeccion"]."</option>
-                                                    ";
-                                                    }
-                                                ?>
-                                            </select>
                                     </div>
                                             <!-- Submit Button-->		  
 										    <p class="text-center mt-4">
@@ -184,15 +106,8 @@
                                                     <thead>
                                                         <tr>
                                                             <th scope="col">Código</th>
-                                                            <th scope="col">Descripción</th>
-                                                            <th scope="col">Color</th>
-                                                            <th scope="col">Material</th>
-                                                            <th scope="col">Marca</th>
-                                                            <th scope="col">Categoria</th>
-                                                            <th scope="col">Sección</th>
-                                                            <th scope="col">Número</th>
-                                                            <th scope="col">Stock</th>
-                                                            <th scope="col">Precio</th>
+                                                            <th scope="col">Cantidad Compra</th>
+                                                            <th scope="col">Fecha</th>
                                                             <th scope="col"></th>
                                                             
                                                         </tr>
@@ -200,7 +115,7 @@
                                                     <tbody>
 
                                                     <?php
-                                                        include("funciones/conexion.php");
+                                                        include("funciones/conexionJonathan.php");
 
                                                             $sentencia = "SELECT
                                                             calzado.Codigo, 
