@@ -81,17 +81,17 @@
                                     </div>
                                     <!-- Message input-->
                                     <div class="form-floating mb-3">
-                                        <textarea class="form-control" name="txtDescripcion" type="text"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required"></textarea>
+                                        <textarea class="form-control" name="txtCantidadCompra" type="text"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required"></textarea>
                                         <label for="message" style="color: rgb(0, 0, 0);">Cantidad Compra</label>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                    <input class="form-control" name="txtFechaVenta" type="date" placeholder="Rellena el campo" data-sb-validations="required" />
+                                    <input class="form-control" name="txtFechaCompra" type="date" placeholder="Rellena el campo" data-sb-validations="required" />
                                         <label for="name" style="color: rgb(0, 0, 0);">Fecha</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <textarea class="form-control" name="txtDescripcion" type="text"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required"></textarea>
+                                        <textarea class="form-control" name="txtPrecioCompra" type="text"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required"></textarea>
                                         <label for="message" style="color: rgb(0, 0, 0);">Precio Compra</label>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
                                     </div>
