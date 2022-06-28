@@ -113,7 +113,7 @@
                                                             <th scope="col">Código</th>
                                                             <th scope="col">Cantidad Compra</th>
                                                             <th scope="col">Fecha</th>
-                                                            <th scope="col">$precioCompra</th>
+                                                            <th scope="col">PrecioCompra</th>
                                                             <th scope="col"></th>
                                                             
                                                         </tr>
