@@ -130,16 +130,12 @@
                                                         include("funciones/conexionPablo.php");
 
                                                             $sentencia = "SELECT
-                                                            venta.Codigo,
+                                                            venta.Codigo, 
                                                             venta.FechaVenta, 
                                                             venta.Cantidad, 
                                                             venta.PrecioVenta
-                                                            FROM
-                                                                venta
-                                                            INNER JOIN
-                                                                Codigo
-                                                            ON 
-                                                                venta.Codigo = venta.Codigo";
+                                                        FROM
+                                                            venta";
 
                                                             $resultado = mysqli_query($conexion, $sentencia);
 

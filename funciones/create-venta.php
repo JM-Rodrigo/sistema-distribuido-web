@@ -6,7 +6,7 @@
     $CatidadVenta= $_POST['txtCantidad'];
     $PrecioVenta= $_POST['txtPrecio'];
     
-    $sentencia = "INSERT INTO ventacalzado VALUES(
+    $sentencia = "INSERT INTO venta VALUES(
         DEFAULT,
         '$IdVenta',
         '$FechaVenta',
