@@ -84,6 +84,22 @@
                                         <label for="message" style="color: rgb(0, 0, 0);">Precio Compra</label>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
                                     </div>
+                                    <div class="form-group">
+                                            <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Proveedor</label>
+                                                <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbCodigo" id="codigo">
+                                                    <option>---Seleccione---</option>
+                                                    <?php
+                                                        include("funciones/conexionJonathan.php");
+                                                        $sentencia="SELECT * FROM proveedor";
+                                                        $resultado=mysqli_query($conexion,$sentencia);
+                                                        while($material=mysqli_fetch_assoc($resultado)){
+                                                        echo "
+                                                        <option value='".$material['IdProveedor']."'>".$material["Codigo"]."</option>
+                                                        ";
+                                                        }
+                                                    ?>
+                                                </select>
+                                    </div>
                                     </div>
                                             <!-- Submit Button-->		  
 										    <p class="text-center mt-4">
