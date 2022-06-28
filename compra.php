@@ -101,11 +101,11 @@
                                                     <option>---Seleccione---</option>
                                                     <?php
                                                         include("funciones/conexionJonathan.php");
-                                                        $sentencia="SELECT * FROM compra";
+                                                        $sentencia="SELECT * FROM proveedor";
                                                         $resultado=mysqli_query($conexion,$sentencia);
                                                         while($material=mysqli_fetch_assoc($resultado)){
                                                         echo "
-                                                        <option value='".$material['IdCompra']."'>".$material["Codigo"]."</option>
+                                                        <option value='".$material['NombreProveedor']."'>".$material["Codigo"]."</option>
                                                         ";
                                                         }
                                                     ?>
