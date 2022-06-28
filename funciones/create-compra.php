@@ -1,8 +1,8 @@
 <?php
     include("conexionJonathan.php");
 
-    $idCompra= $_POST['cmbCodigo'];
-    $Codigo = $_POST['txtCodigoCompra'];
+    //$idCompra= $_POST['cmbCodigo'];
+    $Codigo = $_POST['cmbCodigoCompra'];
     $CantidadCompra= $_POST['txtCantidadCompra'];
     $FechaHoraCompra= $_POST['txtFechaCompra'];
     $PrecioCompra= $_POST['txtPrecioCompra'];

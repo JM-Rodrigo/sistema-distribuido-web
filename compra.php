@@ -65,7 +65,7 @@
                                     <!-- Name input-->
                                     <div class="form-group">
                                             <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Código</label>
-                                                <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbCodigo" id="codigo">
+                                                <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbCodigoCompra" id="codigo">
                                                     <option>---Seleccione---</option>
                                                     <?php
                                                         include("funciones/conexionJonathan.php");
