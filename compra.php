@@ -106,15 +106,8 @@
                                                     <thead>
                                                         <tr>
                                                             <th scope="col">Código</th>
-                                                            <th scope="col">Descripción</th>
-                                                            <th scope="col">Color</th>
-                                                            <th scope="col">Material</th>
-                                                            <th scope="col">Marca</th>
-                                                            <th scope="col">Categoria</th>
-                                                            <th scope="col">Sección</th>
-                                                            <th scope="col">Número</th>
-                                                            <th scope="col">Stock</th>
-                                                            <th scope="col">Precio</th>
+                                                            <th scope="col">Cantidad Compra</th>
+                                                            <th scope="col">Fecha</th>
                                                             <th scope="col"></th>
                                                             
                                                         </tr>
@@ -122,23 +115,16 @@
                                                     <tbody>
 
                                                     <?php
-                                                        include("funciones/conexion.php");
+                                                        include("funciones/conexionJonathan.php");
 
                                                             $sentencia = "SELECT
-                                                            calzado.Codigo, 
-                                                            calzado.DescripcionCalzado, 
-                                                            calzado.ColorCalzado, 
-                                                            material.NombreMaterial, 
-                                                            marca.NombreMarca, 
-                                                            categoria.NombreCategoria, 
-                                                            seccion.NombreSeccion, 
-                                                            talla.Numero, 
-                                                            talla.Stock, 
-                                                            calzado.PrecioSalidaCalzado
+                                                            compra.Codigo, 
+                                                            compra.CantidadCompra, 
+                                                            compra.FechaCompra
                                                         FROM
-                                                            calzado
+                                                            compra
                                                             INNER JOIN
-                                                            categoria
+                                                            calzado
                                                             ON 
                                                                 calzado.IdCategoria = categoria.IdCategoria
                                                             INNER JOIN
@@ -146,17 +132,9 @@
                                                             ON 
                                                                 calzado.IdMarca = marca.IdMarca
                                                             INNER JOIN
-                                                            seccion
+                                                            proveedor
                                                             ON 
-                                                                calzado.IdSeccion = seccion.IdSeccion
-                                                            INNER JOIN
-                                                            material
-                                                            ON 
-                                                                calzado.IdMaterial = material.IdMaterial
-                                                            INNER JOIN
-                                                            talla
-                                                            ON 
-                                                                calzado.Codigo = talla.Codigo";
+                                                                calzado.IdProveedor = proveedor.IdProveedor
 
                                                             $resultado = mysqli_query($conexion, $sentencia);
 
@@ -164,15 +142,8 @@
                                                                 echo "
                                                                 <tr>
                                                                     <td>".$registro["Codigo"]."</td>
-                                                                    <td>".$registro["DescripcionCalzado"]."</td>
-                                                                    <td>".$registro["ColorCalzado"]."</td>
-                                                                    <td>".$registro["NombreMaterial"]."</td>
-                                                                    <td>".$registro["NombreMarca"]."</td>
-                                                                    <td>".$registro["NombreCategoria"]."</td>
-                                                                    <td>".$registro["NombreSeccion"]."</td>
-                                                                    <td>".$registro["Numero"]."</td>
-                                                                    <td>".$registro["Stock"]."</td>
-                                                                    <td>".$registro["PrecioSalidaCalzado"]."</td>
+                                                                    <td>".$registro["CanntidadCompra"]."</td>
+                                                                    <td>".$registro["Fecha"]."</td>
                                                                     <td><a href='actualizar-producto.php?UpdateCodigo=".$registro["Codigo"]."' class='btn btn-success btn-raised btn-xs'><i class='fa-solid fa-file-pen'></i></a></td>
                                                                 </tr>";
                                                                 /*<td><a href='funciones/delete-producto.php?DeleteProducto=".$registro["Codigo"]."'><button class='btn btn-danger btn-raised btn-xs' type='button'><i class='fa-solid fa-trash'></i></button></a></td> */
