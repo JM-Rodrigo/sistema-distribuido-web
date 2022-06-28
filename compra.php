@@ -161,7 +161,7 @@
                                                             INNER JOIN
                                                             proveedor
                                                             ON
-                                                            compra.IdProveedor = proveedor.IdProveedor" ;
+                                                            compra.Codigo = Calzado.Codigo" ;
 
                                                             $resultado = mysqli_query($conexion, $sentencia);
 
