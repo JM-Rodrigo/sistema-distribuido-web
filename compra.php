@@ -82,7 +82,7 @@
                                     <!-- Message input-->
                                     <div class="form-floating mb-3">
                                         <textarea class="form-control" name="txtCantidadCompra" type="text"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required"></textarea>
-                                        <label for="message" style="color: rgb(0, 0, 0);">Cantidad Compra</label>
+                                        <label for="message" style="color: rgb(0, 0, 0);">Compras</label>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
