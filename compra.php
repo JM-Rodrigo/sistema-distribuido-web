@@ -155,11 +155,11 @@
                                                             compra.CantidadCompra,
                                                             compra.FechaHoraCompra,
                                                             compra.PrecioCompra,
-                                                            proveedor.NombreProveedor
+                                                            calzado.NombreProveedor
                                                             FROM
                                                             compra
                                                             INNER JOIN
-                                                            proveedor
+                                                            calzado
                                                             ON
                                                             compra.Codigo = Calzado.Codigo" ;
 
