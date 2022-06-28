@@ -97,7 +97,7 @@
                                     </div>
                                     <div class="form-group">
                                             <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Proveedor</label>
-                                                <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbCodigo" id="codigo">
+                                                <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbProveedor" id="codigo">
                                                     <option>---Seleccione---</option>
                                                     <?php
                                                         include("funciones/conexionJonathan.php");
@@ -105,7 +105,7 @@
                                                         $resultado=mysqli_query($conexion,$sentencia);
                                                         while($material=mysqli_fetch_assoc($resultado)){
                                                         echo "
-                                                        <option value='".$material['idProveedor']."'>".$material["Codigo"]."</option>
+                                                        <option value='".$material['idProveedor']."'>".$material["NombreProveedor"]."</option>
                                                         ";
                                                         }
                                                     ?>
