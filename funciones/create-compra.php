@@ -6,7 +6,7 @@
     $CantidadCompra= $_POST['txtCantidadCompra'];
     $FechaHoraCompra= $_POST['txtFechaCompra'];
     $PrecioCompra= $_POST['txtPrecioCompra'];
-    $idProveedor = $_POST['cmbProveedor']
+    $idProveedor = $_POST['cmbProveedor'];
     
     $sentencia = "INSERT INTO compra VALUES(
         DEFAULT,
