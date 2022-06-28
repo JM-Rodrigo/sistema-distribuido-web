@@ -101,11 +101,11 @@
                                                     <option>---Seleccione---</option>
                                                     <?php
                                                         include("funciones/conexionJonathan.php");
-                                                        $sentencia="SELECT * FROM proveedor";
+                                                        $sentencia="SELECT * FROM calzado";
                                                         $resultado=mysqli_query($conexion,$sentencia);
                                                         while($material=mysqli_fetch_assoc($resultado)){
                                                         echo "
-                                                        <option value='".$material['idProveedor']."'>".$material["NombreProveedor"]."</option>
+                                                        <option value='".$material['Codigo']."'>".$material["idMarca"]."</option>
                                                         ";
                                                         }
                                                     ?>
@@ -151,17 +151,20 @@
                                                         include("funciones/conexionJonathan.php");
 
                                                             $sentencia = "SELECT
-                                                            compra.Codigo,
-                                                            compra.CantidadCompra,
-                                                            compra.FechaHoraCompra,
-                                                            compra.PrecioCompra,
-                                                            calzado.NombreProveedor
-                                                            FROM
+                                                            compra.IdCompra, 
+                                                            compra.Codigo, 
+                                                            compra.CantidadCompra, 
+                                                            compra.FechaHoraCompra, 
+                                                            compra.PrecioCompra, 
+                                                            compra.NombreProveedor, 
+                                                            calzado.Codigo, 
+                                                            calzado.IdMarca
+                                                        FROM
                                                             compra
                                                             INNER JOIN
                                                             calzado
-                                                            ON
-                                                            compra.Codigo = Calzado.Codigo" ;
+                                                            ON 
+                                                                compra.Codigo = calzado.Codigo" ;
 
                                                             $resultado = mysqli_query($conexion, $sentencia);
 
