@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Freelancer - Start Bootstrap Theme</title>
+        <title>Zapatería JARP</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -21,7 +21,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand" href="#page-top">Zapatería JARP</a>
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -182,7 +182,7 @@
         </footer>
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; Your Website 2022</small></div>
+            <div class="container"><small>Ven visitanos &copy; ZapateriaJARP@gmail.com</small></div>
         </div>
         <!-- Portfolio Modals-->
         <!-- Portfolio Modal 1-->
