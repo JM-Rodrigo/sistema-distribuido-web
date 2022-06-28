@@ -1,17 +1,17 @@
 <?php
     include("conexionPablo.php");
 
-    $idVenta= $_POST['cmbCodigo'];
-    $fechaVenta= $_POST['txtFechaVenta'];
-    $catidadVenta= $_POST['txtCantidad'];
-    $precioVenta= $_POST['txtPrecio'];
+    $IdVenta= $_POST['cmbCodigo'];
+    $FechaVenta= $_POST['txtFechaVenta'];
+    $CatidadVenta= $_POST['txtCantidad'];
+    $PrecioVenta= $_POST['txtPrecio'];
     
     $sentencia = "INSERT INTO ventacalzado VALUES(
         DEFAULT,
-        '$idVenta',
-        '$fechaVenta',
-        $catidadVenta,
-        '$precioVenta'
+        '$IdVenta',
+        '$FechaVenta',
+        $CatidadVenta,
+        '$PrecioVenta'
         )";
 
     if(mysqli_query($conexion,$sentencia)){

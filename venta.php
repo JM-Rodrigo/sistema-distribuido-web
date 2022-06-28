@@ -68,11 +68,11 @@
                                                     <option>---Seleccione---</option>
                                                     <?php
                                                     include("funciones/conexionPablo.php");
-                                                    $sentencia="SELECT * FROM marca";
+                                                    $sentencia="SELECT * FROM calzado";
                                                     $resultado=mysqli_query($conexion,$sentencia);
                                                     while($marca=mysqli_fetch_assoc($resultado)){
                                                     echo "
-                                                    <option value='".$marca['IdMarca']."'>".$marca["NombreMarca"]."</option>
+                                                    <option value='".$marca['Codigo']."'>".$marca["Codigo"]."</option>
                                                     ";
                                                     }
                                                 ?>
@@ -130,17 +130,16 @@
                                                         include("funciones/conexionPablo.php");
 
                                                             $sentencia = "SELECT
-                                                            ventacalzado.IdVentaCalzado, 
-                                                            talla.Codigo, 
-                                                            ventacalzado.FechaVenta, 
-                                                            ventacalzado.Cantidad, 
-                                                            ventacalzado.PrecioVenta
+                                                            venta.Codigo,
+                                                            venta.FechaVenta, 
+                                                            venta.Cantidad, 
+                                                            venta.PrecioVenta
                                                             FROM
-                                                                calzado
+                                                                venta
                                                             INNER JOIN
-                                                                codigo
+                                                                Codigo
                                                             ON 
-                                                                calzado.codigo = calzado.codigo";
+                                                                venta.Codigo = venta.Codigo";
 
                                                             $resultado = mysqli_query($conexion, $sentencia);
 
