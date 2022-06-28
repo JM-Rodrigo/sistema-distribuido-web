@@ -64,20 +64,20 @@
 
                         <?php
 
-                                include("funciones/conexionPablo.php");
+                                include("funciones/conexionJonathan.php");
                                 $codigo = $_GET['UpdateCodigo'];
 
                                 $sentencia = "SELECT
                                 talla.Codigo, 
-                                ventacalzado.FechaVenta, 
-                                ventacalzado.Cantidad, 
-                                ventacalzado.PrecioVenta
+                                compracalzado.FechaCompra, 
+                                compracalzado.Cantidad, 
+                                compracalzado.PrecioCompra
                             FROM
-                                ventacalzado
+                                compracalzado
                                 INNER JOIN
                                 talla
                                 ON 
-                                    ventacalzado.IdTalla = talla.IdTalla
+                                    compracalzado.IdTalla = talla.IdTalla
                             WHERE
                                 calzado.Codigo = '$codigo' ";
 
@@ -87,29 +87,29 @@
                         ?>
                 
 
-                                <form action="funciones/update-venta.php" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <form action="funciones/update-compra.php" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
                                 <div class="form-floating mb-3">
-                                        <input class="form-control" name="cmbCodigo"  type="txt" minlength="1"  maxlength="6" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $venta['Codigo'];?>"/>
+                                        <input class="form-control" name="cmbCodigo"  type="txt" minlength="1"  maxlength="6" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $compra['Codigo'];?>"/>
                                         <label for="name" style="color: rgb(0, 0, 0);">Código</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtFechaVenta" type="date"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required" value="<?php echo $venta['FechaVenta'];?>"/>
+                                        <input class="form-control" name="txtFechaCompra" type="date"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required" value="<?php echo $compra['FechaCompra'];?>"/>
                                         <label for="message" style="color: rgb(0, 0, 0);">Fecha</label>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtCantidad"  type="number"  minlength="1"  maxlength="30" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $venta['Cantidad'];?>"/>
+                                        <input class="form-control" name="txtCantidad"  type="number"  minlength="1"  maxlength="30" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $compra['Cantidad'];?>"/>
                                         <label for="name" style="color: rgb(0, 0, 0);">Cantidad</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtPrecio" type="number" step="" minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $venta['Precio'];?>" />
+                                        <input class="form-control" name="txtPrecio" type="number" step="" minlength="1"  maxlength="10" placeholder="Rellena el campo" data-sb-validations="required" value="<?php echo $compra['Precio'];?>" />
                                         <label for="name" style="color: rgb(0, 0, 0);">Precio</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
                                     </div>
                                                 <?php
-                                                        include("funciones/conexionPablo.php");
+                                                        include("funciones/conexionJonathan.php");
                                                         $sentencia="SELECT * FROM talla";
                                                         $resultado=mysqli_query($conexion,$sentencia);
                                                         while($material=mysqli_fetch_assoc($resultado)){
