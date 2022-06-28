@@ -67,7 +67,7 @@
                                                 <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbCodigo" id="codigo">
                                                     <option>---Seleccione---</option>
                                                     <?php
-                                                        include("funciones/conexionPablo.php");
+                                                        include("funciones/conexion.php");
                                                         $sentencia="SELECT * FROM talla";
                                                         $resultado=mysqli_query($conexion,$sentencia);
                                                         while($material=mysqli_fetch_assoc($resultado)){
@@ -127,9 +127,10 @@
                                                     <tbody>
 
                                                     <?php
-                                                        include("funciones/conexionPablo.php");
+                                                        include("funciones/conexion.php");
 
                                                             $sentencia = "SELECT
+                                                            ventacalzado.IdVentaCalzado, 
                                                             talla.Codigo, 
                                                             ventacalzado.FechaVenta, 
                                                             ventacalzado.Cantidad, 
@@ -150,7 +151,7 @@
                                                                     <td>".$venta["FechaVenta"]."</td>
                                                                     <td>".$venta["Cantidad"]."</td>
                                                                     <td>".$venta["PrecioVenta"]."</td>
-                                                                    <td><a href='actualizar-venta.php?UpdateCodigo=".$venta["Codigo"]."' class='btn btn-success btn-raised btn-xs'><i class='fa-solid fa-file-pen'></i></a></td>
+                                                                    <td><a href='actualizar-venta.php?UpdateVenta=".$venta["IdVentaCalzado"]."' class='btn btn-success btn-raised btn-xs'><i class='fa-solid fa-file-pen'></i></a></td>
                                                                 </tr>";
                                                                 /*<td><a href='funciones/delete-producto.php?DeleteProducto=".$registro["Codigo"]."'><button class='btn btn-danger btn-raised btn-xs' type='button'><i class='fa-solid fa-trash'></i></button></a></td> */
                                                             }
