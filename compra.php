@@ -95,21 +95,11 @@
                                         <label for="message" style="color: rgb(0, 0, 0);">Precio Compra</label>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
                                     </div>
-                                    <div class="form-group">
-                                            <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Proveedor</label>
-                                                <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbProveedor" id="codigo">
-                                                    <option>---Seleccione---</option>
-                                                    <?php
-                                                        include("funciones/conexionJonathan.php");
-                                                        $sentencia="SELECT * FROM marca";
-                                                        $resultado=mysqli_query($conexion,$sentencia);
-                                                        while($marca=mysqli_fetch_assoc($resultado)){
-                                                        echo "
-                                                        <option value='".$marca['idMarca']."'>".$marca["NombreMarca"]."</option>
-                                                        ";
-                                                        }
-                                                    ?>
-                                                </select>
+                                    
+                                    <div class="form-floating mb-3">
+                                        <textarea class="form-control" name="txtProveedor" type="text"  minlength="1"  maxlength="50" placeholder="Rellena el campo" style="height: 7rem" data-sb-validations="required"></textarea>
+                                        <label for="message" style="color: rgb(0, 0, 0);">Proveedor</label>
+                                        <div class="invalid-feedback" data-sb-feedback="message:required">Es necesario llenar esté campo</div>
                                     </div>
                                     </div>
                                             <!-- Submit Button-->		  
