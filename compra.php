@@ -63,10 +63,21 @@
                         <!-- to get an API token!-->
                                 <form action="funciones/create-producto.php" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
                                     <!-- Name input-->
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" name="txtCodigo"  type="text" minlength="1"  maxlength="6" placeholder="Rellena el campo" data-sb-validations="required"/>
-                                        <label for="name" style="color: rgb(0, 0, 0);">Código</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">Es necesario llenar esté campo</div>
+                                    <div class="form-group">
+                                            <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Código</label>
+                                                <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbCodigo" id="codigo">
+                                                    <option>---Seleccione---</option>
+                                                    <?php
+                                                        include("funciones/conexionJonathan.php");
+                                                        $sentencia="SELECT * FROM proveedor";
+                                                        $resultado=mysqli_query($conexion,$sentencia);
+                                                        while($material=mysqli_fetch_assoc($resultado)){
+                                                        echo "
+                                                        <option value='".$material['IdProveedor']."'>".$material["Codigo"]."</option>
+                                                        ";
+                                                        }
+                                                    ?>
+                                                </select>
                                     </div>
                                     <!-- Message input-->
                                     <div class="form-floating mb-3">
