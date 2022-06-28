@@ -128,7 +128,7 @@
                                             <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbMarca" id="marca">
                                                 <option><?php echo $producto['NombreMarca'];?></option>
                                                 <?php
-                                                    include("funciones/conexion.php");
+                                                    include("funciones/conexionRodrigo.php");
                                                     $sentencia="SELECT * FROM marca";
                                                     $resultado=mysqli_query($conexion,$sentencia);
                                                     while($marca=mysqli_fetch_assoc($resultado)){
