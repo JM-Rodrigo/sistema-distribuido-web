@@ -2,18 +2,18 @@
     include("conexionJonathan.php");
 
     $idCompra= $_POST['cmbCodigo'];
-    $codigo = $_POST['txtCodigoCompra'];
-    $catidadCompra= $_POST['txtCantidadCompra'];
-    $fechaCompra= $_POST['txtFechaCompra'];
-    $precioCompra= $_POST['txtPrecioCompra'];
+    $Codigo = $_POST['txtCodigoCompra'];
+    $CantidadCompra= $_POST['txtCantidadCompra'];
+    $FechaHoraCompra= $_POST['txtFechaCompra'];
+    $PrecioCompra= $_POST['txtPrecioCompra'];
     
     $sentencia = "INSERT INTO compra VALUES(
         DEFAULT,
-        '$codigo',
-        '$catidadCompra',
-        '$fechaCompra',
-        '$precioCompra',
-        '$idProveedor'
+        '$Codigo',
+        '$CantidadCompra',
+        '$FechaHoraCompra',
+        '$PrecioCompra',
+        '$idProveedor'                                                          
         )";
 
     if(mysqli_query($conexion,$sentencia)){
