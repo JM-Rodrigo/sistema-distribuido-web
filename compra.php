@@ -94,7 +94,7 @@
                                                         $resultado=mysqli_query($conexion,$sentencia);
                                                         while($material=mysqli_fetch_assoc($resultado)){
                                                         echo "
-                                                        <option value='".$material['IdCompra']."'>".$material["Codigo"]."</option>
+                                                        <option value='".$material['IdProveedor']."'>".$material["Codigo"]."</option>
                                                         ";
                                                         }
                                                     ?>
