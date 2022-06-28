@@ -67,7 +67,7 @@
                                                 <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbCodigo" id="codigo">
                                                     <option>---Seleccione---</option>
                                                     <?php
-                                                        include("funciones/conexionPablo.php");
+                                                        include("funciones/cone xionPablo.php");
                                                         $sentencia="SELECT * FROM talla";
                                                         $resultado=mysqli_query($conexion,$sentencia);
                                                         while($material=mysqli_fetch_assoc($resultado)){
