@@ -61,7 +61,7 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-                                <form action="funciones/create-producto.php" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <form action="funciones/create-compra.php" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
                                     <!-- Name input-->
                                     <div class="form-group">
                                             <label class="control-label mt-4" style="color: rgb(0, 0, 0); font-size: 140%;">Código</label>
