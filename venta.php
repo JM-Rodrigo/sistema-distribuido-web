@@ -67,15 +67,15 @@
                                                 <select class="form-select mt-4" style="color: rgb(0, 0, 0); font-size: 140%;" name="cmbCodigo" id="codigo">
                                                     <option>---Seleccione---</option>
                                                     <?php
-                                                        include("funciones/conexionPablo.php");
-                                                        $sentencia="SELECT * FROM talla";
-                                                        $resultado=mysqli_query($conexion,$sentencia);
-                                                        while($material=mysqli_fetch_assoc($resultado)){
-                                                        echo "
-                                                        <option value='".$material['IdTalla']."'>".$material["Codigo"]."</option>
-                                                        ";
-                                                        }
-                                                    ?>
+                                                    include("funciones/conexionPablo.php");
+                                                    $sentencia="SELECT * FROM marca";
+                                                    $resultado=mysqli_query($conexion,$sentencia);
+                                                    while($marca=mysqli_fetch_assoc($resultado)){
+                                                    echo "
+                                                    <option value='".$marca['IdMarca']."'>".$marca["NombreMarca"]."</option>
+                                                    ";
+                                                    }
+                                                ?>
                                                 </select>
                                     </div>
                                     <div class="form-floating mb-3">
@@ -135,12 +135,12 @@
                                                             ventacalzado.FechaVenta, 
                                                             ventacalzado.Cantidad, 
                                                             ventacalzado.PrecioVenta
-                                                        FROM
-                                                            ventacalzado
+                                                            FROM
+                                                                calzado
                                                             INNER JOIN
-                                                            talla
+                                                                marca
                                                             ON 
-                                                                ventacalzado.IdTalla = talla.IdTalla";
+                                                                calzado.IdMarca = marca.IdMarca";
 
                                                             $resultado = mysqli_query($conexion, $sentencia);
 
