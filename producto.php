@@ -30,6 +30,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.php">Inicio</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="producto.php">Registro</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="lista-producto.php">Productos</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="compra.php">Compra</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="venta.php">Venta</a></li>
                     </ul>
@@ -115,88 +116,11 @@
                                     
                                             <!-- Submit Button-->		  
 										    <p class="text-center mt-4">
-										    	<button href="#tabla" class="btn btn-primary btn-xl mt-3" style="color: rgb(0, 0, 0); font-size: 140%;"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+										    	<button href="/lista-producto.php" class="btn btn-primary btn-xl mt-3" style="color: rgb(0, 0, 0); font-size: 140%;"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
 										    </p>
                                 </form>
                             </div>
                         </div>
-                        <section class="page-section" id="tabla">
-                            <div class="container">
-                                <!-- Contact Section Heading-->
-                                <h5 class="page-section-heading text-center text-uppercase text-secondary mb-0">Lista de productos</h5>
-                                <!-- Icon Divider-->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Contact Section Form-->
-                                <div class="row justify-content-center">
-                                        <div class="col-lg-8 col-xl-7">
-                                            <div class="form-floating mb-3">
-                                            <font SIZE=4>
-                                                <table class="table" style="color: rgb(0, 0, 0); font-size: 110%;">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">Código</th>
-                                                            <th scope="col">Descripción</th>
-                                                            <th scope="col">Color</th>
-                                                            <th scope="col">Sctok</th>
-                                                            <th scope="col">Talla</th>
-                                                            <th scope="col">Precio</th>
-                                                            <th scope="col">Marca</th>
-                                                            <th scope="col"></th>
-                                                            
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-
-                                                    <?php
-                                                        include("funciones/conexionRodrigo.php");
-
-                                                            $sentencia = "SELECT
-                                                            calzado.Codigo, 
-                                                            calzado.DescripcionCalzado, 
-                                                            calzado.ColorCalzado, 
-                                                            calzado.Stock, 
-                                                            calzado.Talla, 
-                                                            calzado.PrecioCalzado, 
-                                                            marca.NombreMarca
-                                                        FROM
-                                                            calzado
-                                                            INNER JOIN
-                                                            marca
-                                                            ON 
-                                                                calzado.IdMarca = marca.IdMarca";
-
-                                                            $resultado = mysqli_query($conexion, $sentencia);
-
-                                                            while($registro = mysqli_fetch_assoc($resultado)){
-                                                                echo "
-                                                                <tr>
-                                                                    <td>".$registro["Codigo"]."</td>
-                                                                    <td>".$registro["DescripcionCalzado"]."</td>
-                                                                    <td>".$registro["ColorCalzado"]."</td>
-                                                                    <td>".$registro["Talla"]."</td>
-                                                                    <td>".$registro["Stock"]."</td>
-                                                                    <td>".$registro["PrecioCalzado"]."</td>
-                                                                    <td>".$registro["NombreMarca"]."</td>
-                                                                    <td><a href='actualizar-producto.php?UpdateCodigo=".$registro["Codigo"]."' class='btn btn-success btn-raised btn-xs'><i class='fa-solid fa-file-pen'></i></a></td>
-                                                                </tr>";
-                                                                /*<td><a href='funciones/delete-producto.php?DeleteProducto=".$registro["Codigo"]."'><button class='btn btn-danger btn-raised btn-xs' type='button'><i class='fa-solid fa-trash'></i></button></a></td> */
-                                                            }
-                                                                mysqli_close($conexion);
-                                                    ?>
-                                                    </tbody>
-                                                </table>
-                                            </font>
-                                            </div> 
-                                        
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
                 </div>
             </div>
         </section>           
@@ -240,7 +164,6 @@
         <div class="copyright py-4 text-center text-white">
             <div class="container"><small>Ven visitanos &copy; ZapateriaJARP@gmail.com</small></div>
         </div>
-    
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
@@ -250,5 +173,7 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+        
     </body>
-</html>
+</html> 
