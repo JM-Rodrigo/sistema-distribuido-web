@@ -143,7 +143,7 @@
                                    
                                             <!-- Submit Button-->		  
 										    <p class="text-center mt-4">
-										    	<button href="#!" class="btn btn-primary btn-xl mt-3" style="color: rgb(0, 0, 0); font-size: 100%;"><i class="fa-solid fa-floppy-disk"></i> ACTUALIZAR</button>
+										    	<button href="#!" class="btn btn-warning btn-xl mt-3" style="color: rgb(0, 0, 0); font-size: 100%;"><i class="fa-solid fa-rotate"></i> ACTUALIZAR</button>
 										    </p>
                                 </form>
                             </div>

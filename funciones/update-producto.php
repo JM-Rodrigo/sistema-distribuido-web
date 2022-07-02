@@ -22,7 +22,7 @@
 
 
     if(mysqli_query($conexion,$sentencia)){
-        header("Location: ../producto.php");
+        header("Location: ../lista-producto.php");
     }else{
         echo "error".mysqli_connect_error();
     }
